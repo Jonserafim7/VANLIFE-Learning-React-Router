@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './App.scss'
 import '/src/server.js'
 
@@ -23,13 +23,30 @@ import Vans from './pages/Vans/Vans'
 
 export default function App() {
 
+  const [vansData, setVansData] = useState([])
+
+  const fetchVansData = async () => {
+    try {
+      const response = await fetch('/api/vans')
+      const data = await response.json()
+      console.log('data', data.vans)
+      setVansData(data.vans)
+    } catch (error) {
+      console.error('Error fetching van data', error)
+    }
+  }
+
+  useEffect(() => {
+    fetchVansData()
+  }, [])
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans" element={<Vans fetchVansData={fetchVansData}/>} />
         </Routes>
       </BrowserRouter>
     </div>

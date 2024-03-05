@@ -9,7 +9,7 @@ export default function Nav() {
     <nav>
         <div className='nav-container'>
           <ul className='nav-links'>
-            <li className='nav-logo'><Link Link to="/">#VANLIFE</Link></li>  
+            <li className='nav-logo'><Link to="/">#VANLIFE</Link></li>  
             <li className='nav-about'><Link to="/about">About</Link></li>
             <li className='nav-vans'><Link to='/vans'>Vans</Link></li>
           </ul>
