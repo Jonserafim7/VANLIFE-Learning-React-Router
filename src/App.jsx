@@ -1,8 +1,8 @@
 import React from 'react'
 import './App.scss'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './Components/Home'
-import About from './Components/About'
+import Home from './pages/Home'
+import About from './pages/About'
 
 /*Browser router
     BrowserRouter is a context provider that makes the routing-related information available to all the components in the application. 
@@ -19,7 +19,7 @@ import About from './Components/About'
     It is used to define the mapping between the URL and the component that needs to be rendered when the URL matches the path.
 */
 
-function App() {
+export default function App() {
 
   return (
     <div className="App">
@@ -32,5 +32,3 @@ function App() {
     </div>
   )
 }
-
-export default App
