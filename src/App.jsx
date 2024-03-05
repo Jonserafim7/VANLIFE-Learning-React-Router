@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
+import '/src/server.js'
+
 /*Browser router
     BrowserRouter is a context provider that makes the routing-related information available to all the components in the application. 
     It is used to wrap the entire application so that the routing information is available to all the components in the application.
