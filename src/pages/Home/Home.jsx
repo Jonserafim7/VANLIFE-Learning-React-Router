@@ -1,10 +1,11 @@
 import React from 'react';
-import Nav from '../Components/Nav';
-import Footer from '../Components/Footer';
+import Nav from '../../Components/Nav';
+import Footer from '../../Components/Footer';
+import './Home.scss';
 
 export default function Home() {
   return (
-    <div className='home'>
+    <div className='home-page'>
         <Nav />
         <main>
             <div className='home-content-container '>

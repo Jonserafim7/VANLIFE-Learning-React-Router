@@ -1,10 +1,11 @@
 import React from 'react';
-import Nav from '../Components/Nav';
-import Footer from '../Components/Footer';
+import Nav from '../../Components/Nav';
+import Footer from '../../Components/Footer';
+import './About.scss';
 
 export default function About() {
   return (
-    <div className='about'>
+    <div className='about-page'>
         <Nav />
         <img className='about-bg-img'/>
         <main>
