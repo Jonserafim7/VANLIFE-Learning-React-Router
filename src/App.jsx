@@ -23,8 +23,10 @@ import Vans from './pages/Vans/Vans'
 
 export default function App() {
 
+  // state variable to store the van data fetched from the mock server
   const [vansData, setVansData] = useState([])
 
+  // function to fetch the van data from the mock server
   const fetchVansData = async () => {
     try {
       const response = await fetch('/api/vans')
@@ -36,6 +38,7 @@ export default function App() {
     }
   }
 
+  // fetch the van data when the component mounts
   useEffect(() => {
     fetchVansData()
   }, [])
@@ -46,7 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans fetchVansData={fetchVansData}/>} />
+          <Route path="/vans" element={<Vans vansData={vansData}/>} />
         </Routes>
       </BrowserRouter>
     </div>

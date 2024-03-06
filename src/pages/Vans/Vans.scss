@@ -2,4 +2,93 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+
+    main {
+        display: flex;
+        flex-grow: 1;
+        margin-top: 92px;
+        padding: 30px;
+        flex-direction: column;
+        gap: 30px;
+        background-color: #FFF7ED;
+
+        .filter-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .filter-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .clear-filter {
+                    background: none;
+                    border: none;
+                    font-size: 1rem;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+
+                .clear-filter:hover {
+                    color: #FF8C38;
+                }
+            }
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 40px;
+            justify-content: center;
+
+            .van-card {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                // border: 1px solid #e0e0e0;
+
+                    .van-card-img {
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 5px;
+                    }
+
+                    .van-card-description{
+                        display: flex;
+                        justify-content: space-between;
+
+                        .van-card-name-container {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 7px;
+
+                            .van-card-name {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                            }
+                        }
+            
+                        .van-card-price-container {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            .van-card-price-value {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                            }
+
+                            .van-card-price-duration {
+                                font-size: 14px;
+                            }
+                        }
+
+                    }
+            }
+        
+        }
+    }
 }
+
+
