@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import About from './pages/About/About'
 import Vans from './pages/Vans/Vans'
+import VansDetail from './pages/VansDetail/VansDetail'
 
 /*
   Browser router
@@ -23,13 +24,48 @@ import Vans from './pages/Vans/Vans'
 
 export default function App() {
 
+  // state variable to store the van data fetched from the mock server
+  const [vansData, setVansData] = useState([])
+
+  // function to fetch the van data from the mock server
+  const fetchVansData = async () => {
+    try {
+      const response = await fetch('/api/vans')
+      const data = await response.json()
+      console.log('data', data.vans)
+      setVansData(data.vans)
+    } catch (error) {
+      console.error('Error fetching van data', error)
+    }
+  }
+
+  // fetch the van data when the component mounts
+  useEffect(() => {
+    fetchVansData()
+  }, [])
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/vans" element={<Vans />} />
+          <Route 
+            path="/vans" 
+            element={
+              <Vans 
+                vansData={vansData}
+                />
+            } 
+          />
+          <Route 
+            path="/vans/:id" 
+            element={
+              <VansDetail 
+                vansData={vansData}
+              />
+            } 
+          />
         </Routes>
       </BrowserRouter>
     </div>

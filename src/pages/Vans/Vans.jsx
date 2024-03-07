@@ -1,29 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import './Vans.scss';
-import Nav from '../../Components/Nav';
-import Footer from '../../Components/Footer';
+import Nav from '/src/Components/Nav';
+import Footer from '/src/Components/Footer';
+import { useParams, Link } from 'react-router-dom'
 
-export default function Vans() {
-
-  // state variable to store the van data fetched from the mock server
-  const [vansData, setVansData] = useState([])
-
-  // function to fetch the van data from the mock server
-  const fetchVansData = async () => {
-    try {
-      const response = await fetch('/api/vans')
-      const data = await response.json()
-      console.log('data', data.vans)
-      setVansData(data.vans)
-    } catch (error) {
-      console.error('Error fetching van data', error)
-    }
-  }
-
-  // fetch the van data when the component mounts
-  useEffect(() => {
-    fetchVansData()
-  }, [])
+export default function Vans({ vansData}) {
   
   // function to return the appropriate van type class based on the van type
   const vanTypeClasses = (van) => {
@@ -41,27 +21,29 @@ export default function Vans() {
   // map the van data to JSX elements
   const vansElements = vansData.map((van, index) => {
     return (
-      <div key={index} className='van-card'>
-        <img 
-          className='van-card-img' 
-          src={van.imageUrl} 
-          alt={`${van.name} + image`} 
-        />
-        <div className='van-card-description'>
-          <div className='van-card-name-container'>
-            <h3 className='van-card-name'>{van.name}</h3>
-            <button 
-              className={`van-type-box ${vanTypeClasses(van)}`}
-            >
-              {van.type}
-            </button>
-          </div>
-          <div className='van-card-price-container'>
-            <h3 className='van-card-price-value'>${van.price}</h3>
-            <p className='van-card-price-duration'>/day</p>
+      <Link to={`/vans/${van.id}`} key={van.id}>
+        <div className='van-card'>
+          <img 
+            className='van-card-img' 
+            src={van.imageUrl} 
+            alt={`${van.name} + image`} 
+          />
+          <div className='van-card-info'>
+            <div className='van-card-name-container'>
+              <h3 className='van-card-name'>{van.name}</h3>
+              <button 
+                className={`van-type-box ${vanTypeClasses(van)}`}
+              >
+                {van.type}
+              </button>
+            </div>
+            <div className='van-card-price-container'>
+              <h3 className='van-card-price-value'>${van.price}</h3>
+              <p className='van-card-price-duration'>/day</p>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
     )
   })
 
