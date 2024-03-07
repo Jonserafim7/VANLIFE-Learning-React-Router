@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div className='home-page'>
         <Nav />
-        <main>
-            <div className='home-content-container '>
+        <main className='home-page-main-content'>
+            <div className='home-page-main-content-container'>
                 <h1 className='home-title'>You got the tranvel plans, we got the travel vans.</h1>
                 <p className='home-subtitle'>
                     Add adventure to your life by joining the #vanlife movement.

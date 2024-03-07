@@ -27,11 +27,15 @@ export default function Vans({vansData}) {
         />
         <div className='van-card-description'>
           <div className='van-card-name-container'>
-            <h2 className='van-card-name'>{van.name}</h2>
-            <button className={`van-type-box ${vanTypeClasses(van)}`}>{van.type}</button>
+            <h3 className='van-card-name'>{van.name}</h3>
+            <button 
+              className={`van-type-box ${vanTypeClasses(van)}`}
+            >
+              {van.type}
+            </button>
           </div>
           <div className='van-card-price-container'>
-            <h2 className='van-card-price-value'>${van.price}</h2>
+            <h3 className='van-card-price-value'>${van.price}</h3>
             <p className='van-card-price-duration'>/day</p>
           </div>
         </div>
@@ -42,22 +46,23 @@ export default function Vans({vansData}) {
   return (
     <div className='vans-page'>
       <Nav />
-      <main className='main-page-content-vans'>
-        {/* filter menu */}
-        <div className='filter-container'>
-          <h1 className='filter-title'>Explore our van options</h1>
-          <div className='filter-options'>
-            <button className='van-type-box generic-van'>Simple</button>
-            <button className='van-type-box generic-van'>Luxury</button>
-            <button className='van-type-box generic-van'>Rugged</button>
-            <button className='clear-filter'>clear filters</button>
+      <main className='vans-page-main-content'>
+        <section className='vans-page-main-content-container'>
+          {/* filter menu */}
+          <div className='filter-container'>
+            <h1 className='filter-title'>Explore our van options</h1>
+            <div className='filter-options'>
+              <button className='van-type-box generic-van'>Simple</button>
+              <button className='van-type-box generic-van'>Luxury</button>
+              <button className='van-type-box generic-van'>Rugged</button>
+              <button className='clear-filter'>clear filters</button>
+            </div>
           </div>
-        </div>
-        {/* vans cards */}
-        <div className='cards-container'>
-          {vansElements}
-        </div> 
-        
+          {/* vans cards */}
+          <div className='cards-container'>
+            {vansElements}
+          </div> 
+        </section>
       </main>
       <Footer />
     </div>

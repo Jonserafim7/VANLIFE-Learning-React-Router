@@ -1,21 +1,31 @@
-// Mixins
+// mixins
 
-@mixin van-type-box ($bg, $color: #FFF7ED, $padding: 5px 10px) {
-    display: inline-block;
-    width: max-content;
-
-    font-family: 'Inter', system-ui, 
-    'Avenir', Helvetica, Arial, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-
-    border: none;
-    border-radius: 5px;
-
-    background-color: $bg;
-    color: $color;
-    padding: $padding;
+@mixin pages-layout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
+
+@mixin pages-main-content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin-top: 9.7rem;
+
+    background-color: #FFF7ED;
+}
+
+@mixin pages-main-content-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 100%;
+    max-width: 80rem;
+    padding: 3rem;
+    margin: 0 auto;
+}
+
+//global styles
 
 * {
     margin: 0;
@@ -25,12 +35,33 @@
 
 html, body, #root {
     height: 100%;
+    font-size: 62.5%; // 1rem = 10px
   }
   
 body {
-    font-family: Inter, system-ui, 
-    Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', system-ui, 
+    'Avenir', Helvetica, Arial, sans-serif;
     background-color: rgb(70, 70, 70);
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1.6rem;
 }
 
 .App {
@@ -43,7 +74,7 @@ nav {
     .nav-container {
         background-color: #FFF7ED;
         color: #000000;
-        padding: 30px;
+        padding: 3rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -55,13 +86,13 @@ nav {
             display: flex;
             list-style: none;
             align-items: center;
-            gap: 10px;
+            gap: 1rem;
             cursor: pointer;
             transition: color 0.3s ease-in-out;
             width: 100%;
 
             .nav-logo {
-                font-size: 1.7rem;
+                font-size: 3rem;
                 font-weight: 800;
                 margin-left: 0;
                 margin-right: auto;
@@ -70,7 +101,7 @@ nav {
             .nav-about,
             .nav-vans {
                 font-weight: 500;
-                font-size: 1.1rem;
+                font-size: 2rem;
             }
 
             a {
@@ -94,32 +125,28 @@ footer {
         align-items: center;
         justify-content: center;
         background-color: #252525;
-        padding: 20px;
+        padding: 2rem;
         color: #AAAAAA;
     }
 }
 
-//utility
+//pages
 
-.generic-van {
-    @include van-type-box(
-        $bg:#FFEAD0, 
-        $color:#4D4D4D, 
-        $padding:12px 20px
-    );
-    cursor: pointer;
+.home-page, .about-page, .vans-page {
+    @include pages-layout;
 }
 
-.simple-van {
-    @include van-type-box($bg:#E17654);
+.home-page-main-content, 
+.about-page-main-content, 
+.vans-page-main-content {
+    @include pages-main-content;
 }
 
-.luxury-van {
-    @include van-type-box($bg:#161616);
+.home-page-main-content-container,
+.about-page-main-content-container,
+.vans-page-main-content-container {
+    @include pages-main-content-container;
 }
 
-.rugged-van {
-    @include van-type-box($bg:#115E59);
-}
 
   
