@@ -3,10 +3,12 @@ import './App.scss'
 import '/src/server.js'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home/Home'
-import About from './pages/About/About'
-import Vans from './pages/Vans/Vans'
-import VansDetail from './pages/VansDetail/VansDetail'
+import Layout from './Components/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import Vans from './pages/Vans'
+import VansDetail from './pages/VansDetail'
+
 
 /*
   Browser router
@@ -32,7 +34,6 @@ export default function App() {
     try {
       const response = await fetch('/api/vans')
       const data = await response.json()
-      console.log('data', data.vans)
       setVansData(data.vans)
     } catch (error) {
       console.error('Error fetching van data', error)
@@ -44,28 +45,59 @@ export default function App() {
     fetchVansData()
   }, [])
 
+  // function to return the appropriate van type class based on the van type
+  const vanTypeClasses = (van) => {
+    if (van.type === 'simple') {
+      return 'simple';
+    }
+    else if (van.type === 'luxury') {
+      return 'luxury';
+    }
+    else if (van.type === 'rugged') {
+      return 'rugged';
+    }
+  }
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route 
-            path="/vans" 
-            element={
-              <Vans 
-                vansData={vansData}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route 
+              path="/vans" 
+              element={
+                <Vans 
+                  vansData={vansData} 
+                  vanTypeClasses={vanTypeClasses}/>
+              } 
+            />
+            <Route 
+              path="/vans/:id"
+              /* URL parameters:
+                - the colon in the path indicates that the id is a URL parameter;
+                - a url parameter is a variable part of the URL;
+                - the value of the URL parameter is available in the component
+                  that is rendered when the URL matches the path;
+                - in this case, the value of the id URL parameter is
+                  available in the VansDetail component;
+                - useParams is a hook that returns an object of key/value pairs
+                  of URL parameters;
+                - the key is the name of the URL parameter specified in the route:
+                    <Route path="/vans/:id ...rest of the route...";
+                - the value is the value of the URL parameter specified 
+                  in the Vans page:
+                    <Link to={`/vans/${van.id}`} ...rest of the link...;
+              */
+              element={
+                <VansDetail 
+                  vansData={vansData} 
+                  vanTypeClasses={vanTypeClasses}
                 />
-            } 
-          />
-          <Route 
-            path="/vans/:id" 
-            element={
-              <VansDetail 
-                vansData={vansData}
-              />
-            } 
-          />
+              } 
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
