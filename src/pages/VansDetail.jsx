@@ -1,6 +1,10 @@
+import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { AppContext } from '/src/App'
 
-export default function VansDetail({ vansData, vanTypeClasses }) {
+export default function VansDetail() {
+
+  const { vansData, vanTypeClasses} = useContext(AppContext)
 
   // get the id from the URL
   // useParams is a hook that returns an object of key/value pairs 
@@ -19,17 +23,17 @@ export default function VansDetail({ vansData, vanTypeClasses }) {
     van ? 
 
       <main className='van-details-page flex column grow-1'>
-        <div className='flex column'>
+        <div className='flex column grow-1 justify-between'>
             <Link to='/vans' className='back-link'>Back</Link>
 
-            <section className='van-card flex column'>
+            <section className='van-card flex column grow-1'>
               <img 
                 className='card-img' 
                 src={van.imageUrl} 
                 alt={`${van.name} + image`} 
               />
 
-              <div className='card-info flex-column justify-between'>
+              <div className='card-info flex column justify-center grow-1'>
                 <p className={`van-type badge ${vanTypeClasses(van)}`}>
                   {van.type}
                 </p>

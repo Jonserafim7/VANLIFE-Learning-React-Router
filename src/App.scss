@@ -84,7 +84,8 @@ body {
 
 .badge  {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: max-content;
     padding: 1.5rem 2rem;
 
@@ -117,7 +118,9 @@ body {
     .card-img {
         width: 100%;
         object-fit: cover;
+        object-position: 0 70%;
         border-radius: 0.5rem;
+        max-height: 50rem;       
     }
 
     .card-info {
@@ -213,14 +216,15 @@ body {
     }
 
     .hero-content {
-        font-size: 2rem;
-        line-height: 1.5;
         margin-top: 2rem;
+        font-weight: 400;
     }
 
     .find-van-link {
-        margin-top: 3rem;
+        margin-top: 10rem;
         font-size: 2rem;
+        width: 100%;
+        justify-content: center;
     }
 
     .find-van-link:hover {
@@ -232,10 +236,9 @@ body {
     padding: 3rem;
 
     .hero-section {
-        gap: 2rem;
 
         .hero-img {
-            height: 30rem;
+            height: 25rem;
             margin: 0 -3rem;
             object-fit: cover;
         }
@@ -247,6 +250,7 @@ body {
 
         .hero-content {
             line-height: 1.5;
+            margin-top: 2rem;
         }
     }
 

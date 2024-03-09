@@ -1,6 +1,10 @@
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import {AppContext} from '/src/App'
 
-export default function Vans({ vansData, vanTypeClasses}) {
+export default function Vans() {
+
+  const { vansData, vanTypeClasses} = useContext(AppContext)
 
   // map the van data to JSX elements
   const vansElements = vansData.map((van) => {
@@ -32,13 +36,10 @@ export default function Vans({ vansData, vanTypeClasses}) {
   })
 
   return (
-
     <main className='vans-page flex column grow-1'>
-      <div className='flex grow-1'>
-        <section className='vans-cards-section'>
-          {vansElements}
-        </section> 
-      </div>
+      <section className='vans-cards-section'>
+        {vansElements}
+      </section> 
     </main>
   );
 }
