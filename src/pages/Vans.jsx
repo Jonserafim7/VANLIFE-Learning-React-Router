@@ -7,7 +7,6 @@ export default function Vans({ vansData, vanTypeClasses}) {
     return (
       <Link to={`/vans/${van.id}`} key={van.id}>
         <div className='van-card flex-column'>
-
           <img 
             className='card-img' 
             src={van.imageUrl} 
@@ -22,23 +21,24 @@ export default function Vans({ vansData, vanTypeClasses}) {
                 <span className='duration'>/day</span>
               </p>
             </div>
+
             <p className={`van-type badge ${vanTypeClasses(van)}`}>
               {van.type}
             </p>
           </div>
-
         </div>
       </Link>
     )
   })
 
   return (
-    <div className='vans-page flex-column grow-1'>
 
-      <section className='vans-cards-section'>
-        {vansElements}
-      </section> 
-        
-    </div>
+    <main className='vans-page flex column grow-1'>
+      <div className='flex grow-1'>
+        <section className='vans-cards-section'>
+          {vansElements}
+        </section> 
+      </div>
+    </main>
   );
 }

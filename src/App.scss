@@ -156,12 +156,13 @@ body {
 .layout {
     
     header {
-        background-color: #FFF7ED;
+        background-color: #f8ebda;
         color: #000000;
         padding: 3rem;
         position: fixed;
         top: 0;
         width: 100%;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
         
         .header-title {
             font-size: 3rem;
@@ -190,6 +191,7 @@ body {
             background-color: #252525;
             padding: 2.5rem;
             color: #AAAAAA;
+            box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.1);
         }
     }
 }
