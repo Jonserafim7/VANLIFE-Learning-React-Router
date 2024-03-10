@@ -4,7 +4,7 @@ export default function About() {
 
     return (
 
-        <main className='about-page flex column grow-1'>
+        <main className='about-page page-main-content'>
             <div className='flex column grow-1'>
                 
                 <section className='hero-section flex column grow-1'>

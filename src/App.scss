@@ -15,9 +15,9 @@ html {
 }
 
 body {
+    background-color: #FFF7ED;
     font-family: 'Inter', system-ui, 
     'Avenir', Helvetica, Arial, sans-serif;
-    background-color: rgb(70, 70, 70);
 
     h1 {
         font-size: 3.2rem;
@@ -54,7 +54,9 @@ body {
 
 // utility classes --------------------------------------------
 
-//flex containers
+//layout
+
+//flex
 
 .flex {
     display: flex;
@@ -78,6 +80,38 @@ body {
 
 .align-center {
     align-items: center;
+}
+
+//padding 
+
+.pad-1 {
+    padding: 1rem;
+}
+
+.pad-2 {
+    padding: 2rem;
+}
+
+.pad-3 {
+    padding: 3rem;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 2rem;
+}
+
+.gap-3 {
+    gap: 3rem;
+}
+
+//margin
+
+.marg-left-auto {
+    margin-left: auto;
 }
 
 //custom elements
@@ -148,11 +182,17 @@ body {
     }
 }
 
+.page-main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 10rem;
+    padding: 3rem;
+}
+
 //components --------------------------------------------
 
 .App {
-    display: flex;
-    flex-direction: column;
     height: 100%;
 }
 
@@ -185,8 +225,6 @@ body {
     }
 
     main {
-        margin-top: 10rem;
-        background-color: #FFF7ED;
     }
 
     footer {
@@ -206,7 +244,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: #FFFFFF;
-    padding: 3rem;
 
     .hero-title{
         font-size: 5rem;
@@ -233,7 +270,6 @@ body {
 }
 
 .about-page {
-    padding: 3rem;
 
     .hero-section {
 
@@ -272,7 +308,6 @@ body {
 }
 
 .vans-page {
-    padding: 3rem;
 
     .vans-cards-section{
         display: grid;
@@ -282,7 +317,6 @@ body {
 }
 
 .van-details-page {
-    padding: 3rem;
 
     .back-link {
         font-size: 1.6rem;
@@ -292,6 +326,38 @@ body {
 
     .book-now{
         margin-top: 2rem;
+    }
+}
+
+.host-page {
+    .dashboard-overview-section {
+        
+        .welcome{
+            background-color: #FFEAD0;
+            margin: 2rem -3rem 0 -3rem;
+        }
+
+        .review-score{
+            background-color: #FFD8A8;
+            margin: 0 -3rem;
+        }
+    }
+
+    .listed-vans-section{
+
+        .listed-vans-header{
+            margin: 0 -3rem;
+        }
+
+        .van-card{
+            padding: 1.2rem 2rem;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+    
+            .card-img {
+                width: 20%;
+            }
+        }
     }
 }
 

@@ -22,7 +22,7 @@ export default function VansDetail() {
     
     van ? 
 
-      <main className='van-details-page flex column grow-1'>
+      <main className='van-details-page page-main-content'>
         <div className='flex column grow-1 justify-between'>
             <Link to='/vans' className='back-link'>Back</Link>
 

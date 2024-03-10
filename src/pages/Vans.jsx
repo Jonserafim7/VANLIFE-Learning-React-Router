@@ -36,7 +36,7 @@ export default function Vans() {
   })
 
   return (
-    <main className='vans-page flex column grow-1'>
+    <main className='vans-page page-main-content'>
       <section className='vans-cards-section'>
         {vansElements}
       </section> 

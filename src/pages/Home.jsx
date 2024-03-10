@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
 
-    <main className='home-page flex column grow-1'>
+    <main className='home-page page-main-content'>
       <div className='flex grow-1'>
 
         <section className='hero-section flex column justify-center'>
