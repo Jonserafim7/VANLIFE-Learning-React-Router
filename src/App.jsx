@@ -4,12 +4,16 @@ import '/src/server.js'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './Components/Layout'
-import HostLayout from './Components/HostLayout'
 import Home from './pages/Home'
 import About from './pages/About'
-import Host from './pages/Dashboard'
-import Vans from './pages/Vans'
-import VansDetail from './pages/VansDetail'
+import Vans from './pages/Vans/Vans'
+import VansDetail from './pages/Vans/VansDetail'
+
+import HostLayout from './pages/Host/HostLayout'
+import Dashboard from './pages/Host/Dashboard'
+import Income from './pages/Host/Income'
+import ListedVans from './pages/Host/ListedVans'
+import Reviews from './pages/Host/Reviews'
 
 export default function App() {
 
@@ -17,14 +21,17 @@ export default function App() {
       <div className="App flex column">
         <BrowserRouter>
           <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route element={<HostLayout />}>
-               <Route path="/host/:menu" element={<Host />}/>
+            <Route path='/'element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="vans" element={<Vans />} />
+              <Route path="vans/:id" element={<VansDetail />}/>
+              <Route path='host' element={<HostLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path='income' element={<Income />} />
+                <Route path='listedvans' element={<ListedVans />} />
+                <Route path='reviews' element={<Reviews />} />
               </Route>
-              <Route path="/about" element={<About />} />
-              <Route path="/vans" element={<Vans />} />
-              <Route path="/vans/:id" element={<VansDetail />}/>
             </Route>
           </Routes>
         </BrowserRouter>

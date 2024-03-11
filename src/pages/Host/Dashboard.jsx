@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
-
-import { AppContext } from '../Components/Layout'
+import { AppContext } from '../../Components/Layout'
 
 export default function Dashboard() {
 
@@ -8,7 +7,7 @@ export default function Dashboard() {
 
     const vansElements = vansData.map((van) => {
         return (
-            <div key={van.id} className='van-card flex align-center gap-1'>
+            <div key={van.id} className='van-card flex align-center gap-1 pad-2'>
                 <img 
                     className='card-img' 
                     src={van.imageUrl} 
@@ -27,10 +26,9 @@ export default function Dashboard() {
     })
 
     return (
-    <>
-        <section className='dashboard-overview-section flex column grow-1'>
-
-            <div className='welcome flex column pad-2'>
+    <main className='flex column'>  
+        <section className='dashboard-overview flex column grow-1'>
+            <div className='welcome flex column'>
                 <h1>Welcome</h1>
                 <div className='flex'>
                     <p>Income last <span>30 days</span></p>
@@ -38,17 +36,15 @@ export default function Dashboard() {
                 </div>
                 <h2>$ 0.00</h2>
             </div>
-
-            <div className='review-score flex align-center pad-2'>
+            <div className='review-score flex align-center'>
                 <h3>Review score</h3>
                 <p>5.0/5</p>
                 <button className='marg-left-auto'>Details</button>
             </div>
-
         </section>
 
-        <section className='listed-vans-section flex column grow-1'>
-            <div className='listed-vans-header flex pad-2'>
+        <section className='listed-vans flex column grow-1'>
+            <div className='listed-vans-header flex'>
                 <h2>Your listed vans</h2>
                 <button className='marg-left-auto'>view all</button>
             </div>
@@ -56,6 +52,6 @@ export default function Dashboard() {
                 {vansElements}
             </div>
         </section>
-    </>
+    </main>
     );
 }

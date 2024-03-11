@@ -9,7 +9,7 @@ export default function Header() {
     <header className='flex align-center'>
       <Link to="/" className='header-title'>#VANLIFE</Link>  
       <nav className='flex align-center'>
-        <Link to='/host/dashboard'>Host</Link>
+        <Link to='/host'>Host</Link>
         <Link to="/about">About</Link>
         <Link to='/vans'>Vans</Link>
       </nav>

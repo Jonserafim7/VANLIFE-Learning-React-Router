@@ -114,6 +114,10 @@ body {
     margin-left: auto;
 }
 
+.marg-top-10 {
+    margin-top: 10rem;
+}
+
 //custom elements
 
 .badge  {
@@ -224,9 +228,6 @@ body {
         }
     }
 
-    main {
-    }
-
     footer {
         .footer-container {
             background-color: #252525;
@@ -330,34 +331,46 @@ body {
 }
 
 .host-page {
-    .dashboard-overview-section {
+    
+    .dashboard-overview {
+        margin: 0 -3rem;
         
         .welcome{
             background-color: #FFEAD0;
-            margin: 2rem -3rem 0 -3rem;
+            padding: 2rem 4rem;
         }
 
         .review-score{
-            background-color: #FFD8A8;
-            margin: 0 -3rem;
+            background-color: #FFDDB2;
+            padding: 2rem 4rem;
         }
     }
 
-    .listed-vans-section{
+    .listed-vans {
 
         .listed-vans-header{
-            margin: 0 -3rem;
+            padding: 2rem 1rem;
         }
-
         .van-card{
-            padding: 1.2rem 2rem;
             background-color: #FFFFFF;
-            border-radius: 0.5rem;
-    
+
             .card-img {
                 width: 20%;
             }
         }
     }
+
+    main{
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        button:hover {
+            color: #FF8C38;
+        }
+    }
+
 }
 
