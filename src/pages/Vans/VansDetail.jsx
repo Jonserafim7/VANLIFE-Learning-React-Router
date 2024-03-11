@@ -22,35 +22,33 @@ export default function VansDetail() {
     
     van ? 
 
-      <main className='van-details-page page-main-content'>
-        <div className='flex column grow-1 justify-between'>
-            <Link to='/vans' className='back-link'>Back</Link>
+      <div className='van-details-page flex column grow-1 justify-between pad-3'>
+          <Link to='/vans' className='back-link'>Back</Link>
 
-            <section className='van-card flex column grow-1'>
-              <img 
-                className='card-img' 
-                src={van.imageUrl} 
-                alt={`${van.name} + image`} 
-              />
+          <section className='van-card flex column grow-1'>
+            <img 
+              className='card-img' 
+              src={van.imageUrl} 
+              alt={`${van.name} + image`} 
+            />
 
-              <div className='card-info flex column justify-center grow-1'>
-                <p className={`van-type badge ${vanTypeClasses(van)}`}>
-                  {van.type}
+            <div className='card-info flex column justify-center grow-1'>
+              <p className={`van-type badge ${vanTypeClasses(van)}`}>
+                {van.type}
+              </p>
+              <div className='flex justify-between'>
+                <p className='van-name'>{van.name}</p>
+                <p className='van-price'>
+                  ${van.price}
+                  <span className='duration'>/day</span>
                 </p>
-                <div className='flex justify-between'>
-                  <p className='van-name'>{van.name}</p>
-                  <p className='van-price'>
-                    ${van.price}
-                    <span className='duration'>/day</span>
-                  </p>
-                </div>
-                <p className='van-description'>{van.description}</p>
               </div>
-            </section>
+              <p className='van-description'>{van.description}</p>
+            </div>
+          </section>
 
-            <Link to='/vans' className='badge book-now'>Book now</Link> 
-        </div>
-      </main>
+          <Link to='/vans' className='badge book-now'>Book now</Link> 
+      </div>
 
     : 
 

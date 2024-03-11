@@ -26,32 +26,37 @@ export default function Dashboard() {
     })
 
     return (
-    <main className='flex column'>  
-        <section className='dashboard-overview flex column grow-1'>
-            <div className='welcome flex column'>
-                <h1>Welcome</h1>
-                <div className='flex'>
-                    <p>Income last <span>30 days</span></p>
+        <div className='dashboard flex column'>  
+            <section className='dashboard-overview flex column grow-1'>
+                <div className='welcome flex column gap-1'>
+                    <h1>Welcome</h1>
+                    <div className='flex'>
+                        <h2>Income last <span>30 days</span></h2>
+                        <button className='marg-left-auto'>Details</button>
+                    </div>
+                    <h3>$ 0.00</h3>
+                </div>
+                <div className='reviews flex align-center'>
+                    <div className='flex align-center gap-1'>
+                        <h2>Review score</h2>
+                        <div className='flex gap-05 align-center'>
+                            <img src='/src/Assets/Icons/Star-3.png' alt='star' />
+                            <h3>5.0/<span>5</span></h3>
+                        </div>
+                    </div>
                     <button className='marg-left-auto'>Details</button>
                 </div>
-                <h2>$ 0.00</h2>
-            </div>
-            <div className='review-score flex align-center'>
-                <h3>Review score</h3>
-                <p>5.0/5</p>
-                <button className='marg-left-auto'>Details</button>
-            </div>
-        </section>
+            </section>
 
-        <section className='listed-vans flex column grow-1'>
-            <div className='listed-vans-header flex'>
-                <h2>Your listed vans</h2>
-                <button className='marg-left-auto'>view all</button>
-            </div>
-            <div className='vans-list flex column gap-1'>
-                {vansElements}
-            </div>
-        </section>
-    </main>
+            <section className='listed-vans flex column grow-1'>
+                <div className='listed-vans-header flex'>
+                    <h2>Your listed vans</h2>
+                    <button className='marg-left-auto'>view all</button>
+                </div>
+                <div className='vans-list flex column gap-1'>
+                    {vansElements}
+                </div>
+            </section>
+        </div>
     );
 }

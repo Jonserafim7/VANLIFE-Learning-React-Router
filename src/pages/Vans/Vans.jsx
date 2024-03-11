@@ -36,10 +36,10 @@ export default function Vans() {
   })
 
   return (
-    <main className='vans-page page-main-content'>
+    <div className='vans-page pad-3'>
       <section className='vans-cards-section'>
         {vansElements}
       </section> 
-    </main>
+    </div>
   );
 }

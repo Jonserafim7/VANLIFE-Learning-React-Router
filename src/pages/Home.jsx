@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
 
-    <main className='home-page page-main-content'>
-      
+    <div className='home-page flex grow-1 pad-3'>
 
         <section className='hero-section flex column justify-center grow-1'>
           <h1 className='hero-title'>You got the tranvel plans, we got the travel vans.</h1>
@@ -15,7 +14,6 @@ export default function Home() {
           <Link to='/vans' className='find-van-link badge'>Find your van</Link>
         </section>
 
-      
-    </main>
+    </div>
   );
 }

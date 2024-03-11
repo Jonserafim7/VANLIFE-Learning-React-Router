@@ -96,6 +96,10 @@ body {
     padding: 3rem;
 }
 
+.gap-05 {
+    gap: 0.5rem;
+}
+
 .gap-1 {
     gap: 1rem;
 }
@@ -150,6 +154,10 @@ body {
     background-color: #161616;
 }
 
+.bold {
+    font-weight: 700;
+}
+
 .van-card {
     gap: 1rem;
 
@@ -191,7 +199,6 @@ body {
     flex-direction: column;
     flex-grow: 1;
     margin-top: 10rem;
-    padding: 3rem;
 }
 
 //components --------------------------------------------
@@ -331,46 +338,70 @@ body {
 }
 
 .host-page {
-    
-    .dashboard-overview {
-        margin: 0 -3rem;
-        
-        .welcome{
-            background-color: #FFEAD0;
-            padding: 2rem 4rem;
-        }
 
-        .review-score{
-            background-color: #FFDDB2;
-            padding: 2rem 4rem;
-        }
+    nav{
+        padding: 2rem 1rem;
     }
 
-    .listed-vans {
+    
+    .dashboard{
 
-        .listed-vans-header{
-            padding: 2rem 1rem;
-        }
-        .van-card{
-            background-color: #FFFFFF;
+        .dashboard-overview {
+            margin: 0 -3rem;
+            
+            .welcome{
+                background-color: #FFEAD0;
+                padding: 2rem 4rem;
 
-            .card-img {
-                width: 20%;
+                span {
+                    text-decoration: underline;
+                }
+            }
+    
+            .reviews{
+                background-color: #FFDDB2;
+                padding: 5rem 4rem;
+    
+                img{
+                    width: 2rem;
+                    height: 2rem;
+                }
+                span {
+                    font-weight: 400;
+                }
             }
         }
+    
+        .listed-vans {
+    
+            .listed-vans-header{
+                padding: 2rem 1rem;
+            }
+            .van-card{
+                background-color: #FFFFFF;
+    
+                .card-img {
+                    width: 20%;
+                }
+            }
+        }
+        }
+    
+
+    a {
+        font-size: 2rem;
     }
 
-    main{
-        button {
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-        }
-
-        button:hover {
-            color: #FF8C38;
-        }
+    a:hover,
+    button:hover{
+        text-decoration: underline;
     }
 
+    button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 1.4rem;
+    }
 }
 

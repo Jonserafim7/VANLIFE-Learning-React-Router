@@ -43,7 +43,9 @@ export default function Layout() {
     <AppContext.Provider value={{ vansData, vanTypeClasses }}>
       <div className='layout flex column grow-1'>
           <Header />
-          <Outlet />
+          <main className='page-main-content'>
+            <Outlet />
+          </main>
           <Footer />
       </div>
     </AppContext.Provider>
