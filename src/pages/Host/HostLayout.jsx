@@ -3,12 +3,12 @@ import { Link, Outlet, NavLink } from 'react-router-dom';
 
 export default function HostLayout() {
   return (
-    <div className='host-page pad-3'>
+    <div className=''>
       
-        <nav className='host-nav flex gap-1'>
+        <nav className=''>
           <NavLink 
             to='/host' 
-            className={({isActive}) => isActive ? 'active' : ''} 
+            className={({isActive}) => isActive ? '' : ''} 
             end
           >
             Dashboard
@@ -16,21 +16,21 @@ export default function HostLayout() {
 
           <NavLink 
             to='income' 
-            className={({isActive}) => isActive ? 'active' : ''}
+            className={({isActive}) => isActive ? '' : ''}
           >
             Income
           </NavLink>
 
           <NavLink 
             to='listedvans' 
-            className={({isActive}) => isActive ? 'active' : ''}
+            className={({isActive}) => isActive ? '' : ''}
           >
             Vans
           </NavLink>
           
           <NavLink 
             to='reviews' 
-            className={({isActive}) => isActive ? 'active' : ''}
+            className={({isActive}) => isActive ? '' : ''}
           >
             Reviews
           </NavLink>

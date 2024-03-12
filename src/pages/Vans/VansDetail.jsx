@@ -22,32 +22,32 @@ export default function VansDetail() {
     
     van ? 
 
-      <div className='van-details-page flex column grow-1 justify-between pad-3'>
-          <Link to='/vans' className='back-link'>Back</Link>
+      <div className=''>
+          <Link to='/vans' className=''>Back</Link>
 
-          <section className='van-card flex column grow-1'>
+          <section className=''>
             <img 
-              className='card-img' 
+              className='' 
               src={van.imageUrl} 
               alt={`${van.name} + image`} 
             />
 
-            <div className='card-info flex column justify-center grow-1'>
-              <p className={`van-type badge ${vanTypeClasses(van)}`}>
+            <div className=''>
+              <p className=''>
                 {van.type}
               </p>
-              <div className='flex justify-between'>
-                <p className='van-name'>{van.name}</p>
-                <p className='van-price'>
+              <div className=''>
+                <p className=''>{van.name}</p>
+                <p className=''>
                   ${van.price}
-                  <span className='duration'>/day</span>
+                  <span className=''>/day</span>
                 </p>
               </div>
-              <p className='van-description'>{van.description}</p>
+              <p className=''>{van.description}</p>
             </div>
           </section>
 
-          <Link to='/vans' className='badge book-now'>Book now</Link> 
+          <Link to='/vans' className=''>Book now</Link> 
       </div>
 
     : 

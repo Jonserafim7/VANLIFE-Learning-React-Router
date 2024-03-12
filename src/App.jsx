@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.scss'
+// import './App.scss'
 import '/src/server.js'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -19,7 +19,7 @@ import Reviews from './pages/Host/Reviews'
 export default function App() {
 
   return (
-      <div className="App flex column">
+      <div className="">
         <BrowserRouter>
           <Routes>
             <Route path='/'element={<Layout />}>

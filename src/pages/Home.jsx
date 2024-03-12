@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
 
-    <div className='home-page flex grow-1 pad-3'>
+    <div className=''>
 
-        <section className='hero-section flex column justify-center grow-1'>
-          <h1 className='hero-title'>You got the tranvel plans, we got the travel vans.</h1>
-          <h2 className='hero-content'>
+        <section className=''>
+          <h1 className=''>You got the tranvel plans, we got the travel vans.</h1>
+          <h2 className=''>
               Add adventure to your life by joining the #vanlife movement.
               Rent the perfect van to make your perfect road trip.
           </h2>
-          <Link to='/vans' className='find-van-link badge'>Find your van</Link>
+          <Link to='/vans' className=''>Find your van</Link>
         </section>
 
     </div>

@@ -6,9 +6,9 @@ import { NavLink, Link } from 'react-router-dom';
 
 export default function Header() {
   return (
-    <header className='flex align-center'>
-      <Link to="/" className='header-title'>#VANLIFE</Link>  
-      <nav className='flex align-center'>
+    <header className=''>
+      <Link to="/" className=''>#VANLIFE</Link>  
+      <nav className=''>
         <NavLink 
           to='/host' 
           className={({isActive}) => isActive ? 'active' : ''}

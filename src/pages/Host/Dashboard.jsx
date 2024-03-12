@@ -7,53 +7,53 @@ export default function Dashboard() {
 
     const vansElements = vansData.map((van) => {
         return (
-            <div key={van.id} className='van-card flex align-center gap-1 pad-2'>
+            <div key={van.id} className=''>
                 <img 
-                    className='card-img' 
+                    className='' 
                     src={van.imageUrl} 
                     alt={`${van.name} + image`} 
                 />
-                <div className='card-info flex column'>
-                    <p className='van-name'>{van.name}</p>
-                    <p className='van-price'>
+                <div className=''>
+                    <p className=''>{van.name}</p>
+                    <p className=''>
                         ${van.price}
-                        <span className='duration'>/day</span>
+                        <span className=''>/day</span>
                     </p>
                 </div>
-                <button className='edit-btn marg-left-auto'>Edit</button>
+                <button className=''>Edit</button>
             </div>
         )
     })
 
     return (
-        <div className='dashboard flex column'>  
-            <section className='dashboard-overview flex column grow-1'>
-                <div className='welcome flex column gap-1'>
+        <div className=''>  
+            <section className=''>
+                <div className=''>
                     <h1>Welcome</h1>
-                    <div className='flex'>
+                    <div className=''>
                         <h2>Income last <span>30 days</span></h2>
-                        <button className='marg-left-auto'>Details</button>
+                        <button className=''>Details</button>
                     </div>
                     <h3>$ 0.00</h3>
                 </div>
-                <div className='reviews flex align-center'>
-                    <div className='flex align-center gap-1'>
+                <div className=''>
+                    <div className=''>
                         <h2>Review score</h2>
-                        <div className='flex gap-05 align-center'>
-                            <img src='/src/Assets/Icons/Star-3.png' alt='star' />
+                        <div className=''>
+                            <img src='' alt='star' />
                             <h3>5.0/<span>5</span></h3>
                         </div>
                     </div>
-                    <button className='marg-left-auto'>Details</button>
+                    <button className=''>Details</button>
                 </div>
             </section>
 
-            <section className='listed-vans flex column grow-1'>
-                <div className='listed-vans-header flex'>
+            <section className=''>
+                <div className=''>
                     <h2>Your listed vans</h2>
-                    <button className='marg-left-auto'>view all</button>
+                    <button className=''>view all</button>
                 </div>
-                <div className='vans-list flex column gap-1'>
+                <div className=''>
                     {vansElements}
                 </div>
             </section>

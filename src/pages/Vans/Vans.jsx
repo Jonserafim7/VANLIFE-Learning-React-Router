@@ -10,23 +10,23 @@ export default function Vans() {
   const vansElements = vansData.map((van) => {
     return (
       <Link to={`/vans/${van.id}`} key={van.id}>
-        <div className='van-card flex-column'>
+        <div className=''>
           <img 
-            className='card-img' 
+            className='' 
             src={van.imageUrl} 
             alt={`${van.name} + image`} 
           />
 
-          <div className='card-info flex-column justify-between'>
-            <div className='flex justify-between'>
-              <p className='van-name'>{van.name}</p>
-              <p className='van-price'>
+          <div className=''>
+            <div className=''>
+              <p className=''>{van.name}</p>
+              <p className=''>
                 ${van.price}
-                <span className='duration'>/day</span>
+                <span className=''>/day</span>
               </p>
             </div>
 
-            <p className={`van-type badge ${vanTypeClasses(van)}`}>
+            <p className=''>
               {van.type}
             </p>
           </div>
@@ -36,8 +36,8 @@ export default function Vans() {
   })
 
   return (
-    <div className='vans-page pad-3'>
-      <section className='vans-cards-section'>
+    <div className=''>
+      <section className=''>
         {vansElements}
       </section> 
     </div>

@@ -19,12 +19,7 @@ export default function ListedVans() {
 
   return (
     <div>
-        <h1>host listed vans</h1>
-        
-          <div className='vans-list flex column gap-1'>
-              {/* {vansElements} */}
-          </div>
-        
-      </div>
+      <h1>host listed vans</h1>
+    </div>
   );
 }

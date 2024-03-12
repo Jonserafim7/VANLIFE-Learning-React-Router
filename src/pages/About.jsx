@@ -4,18 +4,18 @@ export default function About() {
 
     return (
 
-        <div className='about-page flex column grow-1 pad-3'>
+        <div className=''>
             
-            <section className='hero-section flex column grow-1'>
+            <section className=''>
                 <img 
-                    className='hero-img' 
+                    className='' 
                     src='/src/Assets/Images/about-hero-img.png'
                 />
-                <div className='flex column grow-1 justify-center'>
-                    <h1 className='hero-title'>
+                <div className=''>
+                    <h1 className=''>
                         Don’t squeeze in a sedan when you could relax in a van.
                     </h1>
-                    <p className='hero-content'>
+                    <p className=''>
                         Our mission is to enliven your road trip with
                         the perfect travel van rental. Our vans are 
                         recertified before each trip to ensure your
@@ -29,9 +29,9 @@ export default function About() {
                 </div>
             </section>
 
-            <section className='explore-section flex column'>
-                <h2 className='explore-title'>Your destination is waiting. <br />Your van is ready.</h2>
-                <Link to='/vans' className='explore-link badge'>Explore our vans</Link>
+            <section className=''>
+                <h2 className=''>Your destination is waiting. <br />Your van is ready.</h2>
+                <Link to='/vans' className=''>Explore our vans</Link>
             </section>
             
         </div>

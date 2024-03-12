@@ -25,25 +25,12 @@ export default function Layout() {
     useEffect(() => {
       fetchVansData()
     }, [])
-  
-    // function to return the appropriate van type class based on the van type
-    const vanTypeClasses = (van) => {
-      if (van.type === 'simple') {
-        return 'simple';
-      }
-      else if (van.type === 'luxury') {
-        return 'luxury';
-      }
-      else if (van.type === 'rugged') {
-        return 'rugged';
-      }
-    }
 
   return (
-    <AppContext.Provider value={{ vansData, vanTypeClasses }}>
-      <div className='layout flex column grow-1'>
+    <AppContext.Provider value={{ vansData }}>
+      <div className=''>
           <Header />
-          <main className='page-main-content'>
+          <main className=''>
             <Outlet />
           </main>
           <Footer />
