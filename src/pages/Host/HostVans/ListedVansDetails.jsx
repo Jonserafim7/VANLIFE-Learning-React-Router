@@ -1,6 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, createContext } from "react";
 import { useParams, NavLink, Outlet } from "react-router-dom";
 import { AppContext } from "../../../Components/Layout";
+
+export const HostVansContext = createContext();
 
 export default function ListedVansDetails() {
   // get the van data and the vansClasses function from the context
@@ -14,7 +16,7 @@ export default function ListedVansDetails() {
 
   // display the van data if it exists, otherwise display a message
   const vanElement = van ? (
-    <section className="container bg-white flex flex-col p-5">
+    <section className="container bg-white flex flex-col p-5 mx-auto">
       <div className="flex gap-4">
         <img src={`${van.imageUrl}`} className="w-36 rounded-md object-cover" />
         <div className="flex flex-col justify-center gap-1">
@@ -71,5 +73,11 @@ export default function ListedVansDetails() {
     </div>
   );
 
-  return <div className="p-8">{vanElement}</div>;
+  return (
+    <HostVansContext.Provider value={{van}}>
+      <div className="p-8">
+        {vanElement}
+      </div>
+    </HostVansContext.Provider>
+    );
 }
