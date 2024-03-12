@@ -158,6 +158,11 @@ body {
     font-weight: 700;
 }
 
+.active{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .van-card {
     gap: 1rem;
 
@@ -193,6 +198,8 @@ body {
         }
     }
 }
+
+
 
 .page-main-content {
     display: flex;
