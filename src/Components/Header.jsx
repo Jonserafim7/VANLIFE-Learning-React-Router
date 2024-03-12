@@ -11,13 +11,34 @@ export default function Header() {
         #VANLIFE
       </Link>
       <nav className="flex ml-auto gap-3">
-        <NavLink to="/host" className={({ isActive }) => (isActive ? "underline font-semibold text-base" : "font-medium text-base")}>
+        <NavLink
+          to="/host"
+          className={({ isActive }) =>
+            isActive
+              ? "underline font-semibold text-base hover:text-orange-500"
+              : "font-medium text-base hover:text-orange-500"
+          }
+        >
           Host
         </NavLink>
-        <NavLink to="/about" className={({ isActive }) => (isActive ? "underline font-semibold text-base" : "font-medium text-base")}>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "underline font-semibold text-base hover:text-orange-500"
+              : "font-medium text-base hover:text-orange-500"
+          }
+        >
           About
         </NavLink>
-        <NavLink to="/vans" className={({ isActive }) => (isActive ? "underline font-semibold text-base" : "font-medium text-base")}>
+        <NavLink
+          to="/vans"
+          className={({ isActive }) =>
+            isActive
+              ? "underline font-semibold text-base hover:text-orange-500"
+              : "font-medium text-base hover:text-orange-500"
+          }
+        >
           Vans
         </NavLink>
       </nav>

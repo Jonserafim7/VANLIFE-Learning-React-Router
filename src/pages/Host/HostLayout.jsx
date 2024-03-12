@@ -5,10 +5,10 @@ export default function HostLayout() {
   return (
     <div className=''>
       
-        <nav className=''>
+        <nav className='flex gap-3 p-8'>
           <NavLink 
             to='/host' 
-            className={({isActive}) => isActive ? '' : ''} 
+            className={({isActive}) => isActive ? 'underline font-bold' : 'hover:text-orange-500'} 
             end
           >
             Dashboard
@@ -16,21 +16,21 @@ export default function HostLayout() {
 
           <NavLink 
             to='income' 
-            className={({isActive}) => isActive ? '' : ''}
+            className={({isActive}) => isActive ? 'underline font-bold' : 'hover:text-orange-500'}
           >
             Income
           </NavLink>
 
           <NavLink 
             to='listedvans' 
-            className={({isActive}) => isActive ? '' : ''}
+            className={({isActive}) => isActive ? 'underline font-bold' : 'hover:text-orange-500'}
           >
             Vans
           </NavLink>
           
           <NavLink 
             to='reviews' 
-            className={({isActive}) => isActive ? '' : ''}
+            className={({isActive}) => isActive ? 'underline font-bold' : 'hover:text-orange-500'}
           >
             Reviews
           </NavLink>

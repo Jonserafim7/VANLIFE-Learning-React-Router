@@ -9,7 +9,7 @@ export default {
       
         gridTemplateColumns: {
           'custom1': 'repeat(auto-fill, minmax(14.375rem, 1fr))',
-        }
+        },
       }
   },
   plugins: [],
