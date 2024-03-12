@@ -36,7 +36,7 @@ export default function Vans() {
   })
 
   return (
-    <div className=''>
+    <div className='grid-cols-[]'>
       <section className=''>
         {vansElements}
       </section> 

@@ -4,14 +4,14 @@ export default function About() {
 
     return (
 
-        <div className='flex grow flex-col p-8'>
+        <div className='flex grow flex-col '>
             
-            <section className='flex flex-col grow'>
+            <section className='flex flex-col'>
                 <img 
-                    className='mx-[-32px] w-full object-cover' 
+                    className='oject-cover w-full' 
                     src='/src/Assets/Images/about-hero-img.png'
                 />
-                <div className='mt-8'>
+                <div className='p-8'>
                     <h1 className='text-[2rem]/[2.375rem] font-bold'>
                         Don’t squeeze in a sedan when you could relax in a van.
                     </h1>
@@ -29,9 +29,11 @@ export default function About() {
                 </div>
             </section>
 
-            <section className='bg-[#FFCC8D] p-6 flex flex-col'>
-                <h2 className=''>Your destination is waiting. <br />Your van is ready.</h2>
-                <Link to='/vans' className=''>Explore our vans</Link>
+            <section className='px-8 '>
+                <div className='bg-[#FFCC8D] flex flex-col p-6 rounded-lg'>
+                    <h2 className='text-2xl font-bold'>Your destination is waiting. <br />Your van is ready.</h2>
+                    <Link to='/vans' className='bg-black text-white w-max px-6 py-3  rounded-md mt-4'>Explore our vans</Link>
+                </div>
             </section>
             
         </div>
