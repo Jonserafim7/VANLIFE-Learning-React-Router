@@ -1,4 +1,4 @@
-import React, {useState, createContext, useEffect} from 'react'
+import React from 'react'
 import './App.scss'
 import '/src/server.js'
 
@@ -13,6 +13,7 @@ import HostLayout from './pages/Host/HostLayout'
 import Dashboard from './pages/Host/Dashboard'
 import Income from './pages/Host/Income'
 import ListedVans from './pages/Host/ListedVans'
+import ListedVansDetails from './pages/Host/ListedVansDetails'
 import Reviews from './pages/Host/Reviews'
 
 export default function App() {
@@ -26,12 +27,15 @@ export default function App() {
               <Route path="about" element={<About />} />
               <Route path="vans" element={<Vans />} />
               <Route path="vans/:id" element={<VansDetail />}/>
+
               <Route path='host' element={<HostLayout />}>
                 <Route index element={<Dashboard />} />
                 <Route path='income' element={<Income />} />
                 <Route path='listedvans' element={<ListedVans />} />
+                <Route path='listedvans/:id' element={<ListedVansDetails />} />
                 <Route path='reviews' element={<Reviews />} />
               </Route>
+
             </Route>
           </Routes>
         </BrowserRouter>
