@@ -1,17 +1,28 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "/src/Components/Layout";
 
 export default function Vans() {
   // get the van data from the context
-  const { vansData } = useContext(AppContext);
+  const { vansData ,setVansData, vansClasses } = useContext(AppContext);
 
-  // function to return the appropriate class based on the van type
-  const vansClasses = (van) => {
-    if (van.type === "simple") return "bg-[#E17654]";
-    if (van.type === "luxury") return "bg-[#161616]";
-    if (van.type === "rugged") return "bg-[#115E59]";
+  // function to fetch the van data from the mock server
+  const fetchVansData = async () => {
+    try {
+      const response = await fetch("/api/vans");
+      const data = await response.json();
+      setVansData(data.vans);
+    } catch (error) {
+      console.error("Error fetching van data", error);
+    }
   };
+
+   // fetch the van data when the component mounts
+   useEffect(() => {
+    fetchVansData();
+  }, []);
+
+ 
 
   // map the van data to JSX elements
   const vansElements = vansData.map((van) => {
@@ -57,7 +68,7 @@ export default function Vans() {
         <button className="underline ml-auto">Clear filters</button>
       </nav>
 
-      <section className="grid grid-cols-custom1 gap-8 mt-12">
+      <section className="grid grid-cols-custom1 gap-8 mt-8">
         {vansElements}
       </section>
     </div>

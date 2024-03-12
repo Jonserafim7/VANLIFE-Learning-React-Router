@@ -3,9 +3,9 @@ import { Link, Outlet, NavLink } from 'react-router-dom';
 
 export default function HostLayout() {
   return (
-    <div className=''>
+    <>
       
-        <nav className='flex gap-3 p-8'>
+        <nav className='flex gap-3 p-8 container'>
           <NavLink 
             to='/host' 
             className={({isActive}) => isActive ? 'underline font-bold' : 'hover:text-orange-500'} 
@@ -38,6 +38,6 @@ export default function HostLayout() {
         
         <Outlet/>
        
-    </div>
+    </>
   );
 }

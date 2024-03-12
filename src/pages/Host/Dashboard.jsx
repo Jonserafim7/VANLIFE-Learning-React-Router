@@ -1,11 +1,25 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { AppContext } from '../../Components/Layout'
 
 export default function Dashboard() {
 
-    const { vansData } = useContext(AppContext)
+    const { hostVans, setHostVans } = useContext(AppContext)
 
-    const vansElements = vansData.map((van) => {
+     // state variable to store the signed in status
+    const [signedIn, setSignedIn] = useState(true)
+
+    // fetch the host vans data when the component mounts
+    useEffect(() => {
+        if(signedIn) {
+        fetch('/api/host/vans')
+        .then(response => response.json())
+        .then(data => {
+            setHostVans(data.vans)
+        })
+        }
+  }, [])
+
+    const vansElements = hostVans.map((van) => {
         return (
             <div key={van.id} className='flex items-center bg-white py-4 px-5 rounded-md'>
                 <img 
