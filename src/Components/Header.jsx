@@ -6,7 +6,7 @@ import { NavLink, Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="flex items-center p-8 fixed top-0 bg-[#FFF7ED] w-full">
+    <header className="flex items-center p-8 fixed top-0 bg-[#ffefdc] w-full shadow-md">
       <Link to="/" className="text-2xl font-bold">
         #VANLIFE
       </Link>

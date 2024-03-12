@@ -29,7 +29,7 @@ export default function Layout() {
     <AppContext.Provider value={{ vansData }}>
       <div className="h-full flex flex-col relative">
         <Header />
-        <main className="flex grow flex-col mt-24">
+        <main className="flex grow flex-col mt-24 bg-[#FFF7ED]">
           <Outlet />
         </main>
         <Footer />
