@@ -1,17 +1,16 @@
-import React, { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import { AppContext } from "/src/Components/Layout";
+import React, { useContext } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { AppContext } from '/src/Components/Layout'
 
 export default function VansDetail() {
-
   // get the van data and the vansClasses function from the context
-  const { vansData, vansClasses } = useContext(AppContext);
+  const { vansData, vansClasses } = useContext(AppContext)
 
   // get the id from the URL
-  const { id } = useParams();
+  const { id } = useParams()
 
   // find the van with the id that matches the id from the URL
-  const van = vansData.find((van) => van.id === id);
+  const van = vansData.find((van) => van.id === id)
 
   return van ? (
     <div className="p-8">
@@ -29,8 +28,7 @@ export default function VansDetail() {
         <div className="flex flex-col gap-4">
           <p
             className={`py-1 px-5 rounded-md w-max 
-              ${vansClasses(van)} text-white mt-8`}
-          >
+              ${vansClasses(van)} text-white mt-8`}>
             {van.type}
           </p>
           <div className="">
@@ -44,8 +42,7 @@ export default function VansDetail() {
           <Link
             to="/vans"
             className="bg-orange-400 text-center w-full 
-            text-base font-bold p-3 rounded-lg text-white"
-          >
+            text-base font-bold p-3 rounded-lg text-white">
             Book now
           </Link>
         </div>
@@ -53,5 +50,5 @@ export default function VansDetail() {
     </div>
   ) : (
     <h1>Van not found</h1>
-  );
+  )
 }

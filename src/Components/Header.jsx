@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
 // Link is used to navigate between different pages in the application.
 // It does not reload the entire page when the link is clicked,
 // allowing for a faster navigation experience and maintaining the state of the application.
@@ -15,33 +15,30 @@ export default function Header() {
           to="/host"
           className={({ isActive }) =>
             isActive
-              ? "underline font-semibold text-base hover:text-orange-500"
-              : "font-medium text-base hover:text-orange-500"
-          }
-        >
+              ? 'underline font-semibold text-base hover:text-orange-500'
+              : 'font-medium text-base hover:text-orange-500'
+          }>
           Host
         </NavLink>
         <NavLink
           to="/about"
           className={({ isActive }) =>
             isActive
-              ? "underline font-semibold text-base hover:text-orange-500"
-              : "font-medium text-base hover:text-orange-500"
-          }
-        >
+              ? 'underline font-semibold text-base hover:text-orange-500'
+              : 'font-medium text-base hover:text-orange-500'
+          }>
           About
         </NavLink>
         <NavLink
           to="/vans"
           className={({ isActive }) =>
             isActive
-              ? "underline font-semibold text-base hover:text-orange-500"
-              : "font-medium text-base hover:text-orange-500"
-          }
-        >
+              ? 'underline font-semibold text-base hover:text-orange-500'
+              : 'font-medium text-base hover:text-orange-500'
+          }>
           Vans
         </NavLink>
       </nav>
     </header>
-  );
+  )
 }

@@ -1,28 +1,26 @@
-import React, { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { AppContext } from "/src/Components/Layout";
+import React, { useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { AppContext } from '/src/Components/Layout'
 
 export default function Vans() {
   // get the van data from the context
-  const { vansData ,setVansData, vansClasses } = useContext(AppContext);
+  const { vansData, setVansData, vansClasses } = useContext(AppContext)
 
-  // function to fetch the van data from the mock server
+  // async function to fetch the van data from the mock server
   const fetchVansData = async () => {
     try {
-      const response = await fetch("/api/vans");
-      const data = await response.json();
-      setVansData(data.vans);
+      const response = await fetch('/api/vans')
+      const data = await response.json()
+      setVansData(data.vans)
     } catch (error) {
-      console.error("Error fetching van data", error);
+      console.error('Error fetching van data', error)
     }
-  };
+  }
 
-   // fetch the van data when the component mounts
-   useEffect(() => {
-    fetchVansData();
-  }, []);
-
- 
+  // fetch the van data when the component mounts
+  useEffect(() => {
+    fetchVansData()
+  }, [])
 
   // map the van data to JSX elements
   const vansElements = vansData.map((van) => {
@@ -47,15 +45,14 @@ export default function Vans() {
 
             <p
               className={`py-1 px-5 rounded-md w-max 
-              ${vansClasses(van)} text-white mt-1`}
-            >
+              ${vansClasses(van)} text-white mt-1`}>
               {van.type}
             </p>
           </div>
         </div>
       </Link>
-    );
-  });
+    )
+  })
 
   return (
     <div className="p-8">
@@ -72,5 +69,5 @@ export default function Vans() {
         {vansElements}
       </section>
     </div>
-  );
+  )
 }
