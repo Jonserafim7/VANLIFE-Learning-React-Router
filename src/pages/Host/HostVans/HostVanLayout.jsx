@@ -32,6 +32,7 @@ export default function HostVanLayout() {
           </h2>
         </div>
       </div>
+
       <nav className="flex gap-5 py-5">
         <NavLink
           to={`.`}
@@ -74,7 +75,10 @@ export default function HostVanLayout() {
 
   return (
     <HostVansContext.Provider value={{ van }}>
-      <Link to="/host/vans" className="hover:underline hover:font-bold ml-8">
+      <Link
+        to=".."
+        relative="path"
+        className="hover:underline hover:font-bold ml-8">
         Back to all vans
       </Link>
       <div className="p-8">{vanElement}</div>
