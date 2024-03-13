@@ -1,8 +1,8 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '/src/server.js'
 import '/src/index.css'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './Components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'

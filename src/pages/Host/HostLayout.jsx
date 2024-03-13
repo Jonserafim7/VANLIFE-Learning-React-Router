@@ -6,7 +6,7 @@ export default function HostLayout() {
   const { setHostVans, signedIn } = useContext(AppContext)
 
   // if the user is signed in,
-  // fetch the host vans data when the component mounts 
+  // fetch the host vans data when the component mounts
   // and update the hostVans state variable
   useEffect(() => {
     if (signedIn) {
@@ -22,7 +22,7 @@ export default function HostLayout() {
     <>
       <nav className="flex gap-3 p-8 container">
         <NavLink
-          to="/host"
+          to="."
           className={({ isActive }) =>
             isActive ? 'underline font-bold' : 'hover:text-orange-500'
           }
