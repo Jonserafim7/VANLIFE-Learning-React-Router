@@ -8,7 +8,7 @@ export default function About() {
             
             <section className='flex flex-col'>
                 <img 
-                    className='oject-cover w-full' 
+                    className='oject-cover w-full max-h-[500px]' 
                     src='/src/Assets/Images/about-hero-img.png'
                 />
                 <div className='p-8'>

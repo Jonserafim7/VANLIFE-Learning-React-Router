@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
-import { HostVansContext } from './ListedVansDetails';
+import { HostVansContext } from './HostVanLayout';
 
-export default function ListedVansDetailsDetails() {
+export default function HostVanDetails() {
 
     const { van } = useContext(HostVansContext);
 

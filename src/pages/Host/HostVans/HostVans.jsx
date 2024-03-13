@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../../../Components/Layout';
 
-export default function ListedVans() {
+export default function HostVans() {
 
   // getting the state variable and the function to update the state variable from the context
   // provided by the Layout component
@@ -11,7 +11,7 @@ export default function ListedVans() {
   // map the host vans data to JSX elements
   const hostVansList = hostVans.map((van, index) => {
     return (
-      <Link key={van.id} to={`/host/listedvans/${van.id}`} className='hover:shadow-md hover:scale-[102%] transition ease-in-out'>
+      <Link key={van.id} to={`/host/vans/${van.id}`} className='hover:shadow-md hover:scale-[102%] transition ease-in-out'>
         <div key={van.id} className='flex items-center bg-white py-4 px-5 rounded-md'>
             <img 
                 className='w-24 h-24 rounded-md object-cover' 
@@ -32,9 +32,9 @@ export default function ListedVans() {
   })
 
   return (
-    <div className='flex flex-col gap-4 container px-8'>
+    <div className='flex flex-col gap-4 px-8'>
       <h1 className='text-3xl font-bold'>Host listed vans</h1>
-      {hostVansList}
+      {hostVans.length > 0 ? hostVansList : <h2>loading</h2>}
     </div>
   );
 }

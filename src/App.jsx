@@ -14,11 +14,11 @@ import Dashboard from './pages/Host/Dashboard'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
 
-import ListedVans from './pages/Host/HostVans/ListedVans'
-import ListedVansDetails from './pages/Host/HostVans/ListedVansDetails'
-import ListedVansDetailsDetails from './pages/Host/HostVans/ListedVansDetailsDetails'
-import ListedVansDetailsPricing from './pages/Host/HostVans/ListedVansDetailsPricing'
-import ListedVansDetailsPhotos from './pages/Host/HostVans/ListedVansDetailsPhotos'
+import HostVans from './pages/Host/HostVans/HostVans'
+import HostVanLayout from './pages/Host/HostVans/HostVanLayout'
+import HostVanDetails from './pages/Host/HostVans/HostVanDetails'
+import HostVanPricing from './pages/Host/HostVans/HostVanPricing'
+import HostVanPhotos from './pages/Host/HostVans/HostVanPhotos'
 
 export default function App() {
 
@@ -34,15 +34,15 @@ export default function App() {
           <Route path='host' element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path='income' element={<Income />} />
-            <Route path='listedvans' element={<ListedVans />} />
-            <Route path='listedvans/:id' element={<ListedVansDetails />} >
-              <Route index element={<ListedVansDetailsDetails />} />
-              <Route path='pricing' element={<ListedVansDetailsPricing />} />
-              <Route path='photos' element={<ListedVansDetailsPhotos />} />
-            </Route>
             <Route path='reviews' element={<Reviews />} />
-          </Route>
 
+            <Route path='vans' element={<HostVans />} />
+            <Route path='vans/:id' element={<HostVanLayout />} >
+              <Route index element={<HostVanDetails />} />
+              <Route path='pricing' element={<HostVanPricing />} />
+              <Route path='photos' element={<HostVanPhotos />} />
+            </Route>
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -12,9 +12,9 @@ export default function Layout() {
 
    // function to return the appropriate class based on the van type
    const vansClasses = (van) => {
-    if (van.type === "simple") return "bg-[#E17654]";
-    if (van.type === "luxury") return "bg-[#161616]";
-    if (van.type === "rugged") return "bg-[#115E59]";
+    if (van.type === "simple") return "bg-[#E17654]"
+    if (van.type === "luxury") return "bg-[#161616]"
+    if (van.type === "rugged") return "bg-[#115E59]"
   };
 
   return (
