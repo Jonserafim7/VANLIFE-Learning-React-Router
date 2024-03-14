@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { AppContext } from '/src/Components/Layout'
+import { Link, useParams, useOutletContext } from 'react-router-dom'
 
 export default function VansDetail() {
   // get the van data and the vansClasses function from the context
-  const { vansData, vansClasses } = useContext(AppContext)
+  const { vansData, vansClasses } = useOutletContext()
 
   // get the id from the URL
   const { id } = useParams()
@@ -18,9 +16,9 @@ export default function VansDetail() {
         Back
       </Link>
 
-      <section className="mt-8">
+      <section className="container mt-8 flex flex-col  mx-auto">
         <img
-          className="rounded-md w-full object-cover"
+          className="rounded-md w-full object-cover object-center max-h-[500px]"
           src={van.imageUrl}
           alt={`${van.name} + image`}
         />

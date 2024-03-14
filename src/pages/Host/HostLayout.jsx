@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from 'react'
-import { Outlet, NavLink } from 'react-router-dom'
-import { AppContext } from '../../Components/Layout'
+import React, { useEffect } from 'react'
+import { Outlet, NavLink, useOutletContext } from 'react-router-dom'
 
 export default function HostLayout() {
-  const { setHostVans, signedIn } = useContext(AppContext)
+  const { setHostVans, signedIn, hostVans, vansClasses } = useOutletContext()
+  console.log('hostVans', hostVans)
 
   // if the user is signed in,
   // fetch the host vans data when the component mounts
@@ -55,7 +55,7 @@ export default function HostLayout() {
         </NavLink>
       </nav>
 
-      <Outlet />
+      <Outlet context={{ hostVans, vansClasses }} />
     </>
   )
 }

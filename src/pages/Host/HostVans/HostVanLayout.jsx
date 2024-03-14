@@ -1,12 +1,14 @@
-import React, { useContext, createContext } from 'react'
-import { useParams, NavLink, Outlet, Link } from 'react-router-dom'
-import { AppContext } from '../../../Components/Layout'
-
-export const HostVansContext = createContext()
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  Link,
+  useOutletContext,
+} from 'react-router-dom'
 
 export default function HostVanLayout() {
   // get the van data and the vansClasses function from the context
-  const { hostVans, vansClasses } = useContext(AppContext)
+  const { hostVans, vansClasses } = useOutletContext()
 
   // get the id from the URL
   const { id } = useParams()
@@ -32,7 +34,19 @@ export default function HostVanLayout() {
           </h2>
         </div>
       </div>
+    </section>
+  ) : (
+    <div>
+      <h1>Van not found</h1>
+    </div>
+  )
 
+  return (
+    <div className="px-8 pb-8">
+      <Link to=".." relative="path" className="hover:underline hover:font-bold">
+        Back to all vans
+      </Link>
+      <div className="mt-8">{vanElement}</div>
       <nav className="flex gap-5 py-5">
         <NavLink
           to={`.`}
@@ -63,25 +77,10 @@ export default function HostVanLayout() {
           Photos
         </NavLink>
       </nav>
-      <div className="flex flex-col">
-        <Outlet />
+      <hr />
+      <div className="flex flex-col mt-5">
+        <Outlet context={{ van }} />
       </div>
-    </section>
-  ) : (
-    <div>
-      <h1>Van not found</h1>
     </div>
-  )
-
-  return (
-    <HostVansContext.Provider value={{ van }}>
-      <Link
-        to=".."
-        relative="path"
-        className="hover:underline hover:font-bold ml-8">
-        Back to all vans
-      </Link>
-      <div className="p-8">{vanElement}</div>
-    </HostVansContext.Provider>
   )
 }
