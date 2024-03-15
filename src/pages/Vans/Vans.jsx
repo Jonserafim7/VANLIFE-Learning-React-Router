@@ -73,24 +73,41 @@ export default function Vans() {
       <h1 className="text-3xl font-bold">Explore our van options</h1>
 
       <nav className="flex gap-4 items-center mt-4">
-        <Link
-          to="?type=simple"
-          className={`${typeFilter === 'simple' ? 'shadow-md bg-[#E17654] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#E17654] hover:text-white `}>
+        <button
+          onClick={() => setSearchParams({ type: 'simple' })}
+          className={`${
+            typeFilter === 'simple'
+              ? 'shadow-md bg-[#E17654] text-white'
+              : 'bg-[#FFEAD0]'
+          }  
+            py-2 px-4 rounded-md hover:bg-[#E17654] hover:text-white `}>
           Simple
-        </Link>
-        <Link
-          to="?type=luxury"
-          className={`${typeFilter === 'luxury' ? 'shadow-md bg-[#161616] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#161616] hover:text-white `}>
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: 'luxury' })}
+          className={`${
+            typeFilter === 'luxury'
+              ? 'shadow-md bg-[#161616] text-white'
+              : 'bg-[#FFEAD0]'
+          }  
+            py-2 px-4 rounded-md hover:bg-[#161616] hover:text-white `}>
           Luxury
-        </Link>
-        <Link
-          to="?type=rugged"
-          className={`${typeFilter === 'rugged' ? 'shadow-md bg-[#115E59] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#115E59] hover:text-white `}>
+        </button>
+        <button
+          onClick={() => setSearchParams({ type: 'rugged' })}
+          className={`${
+            typeFilter === 'rugged'
+              ? 'shadow-md bg-[#115E59] text-white'
+              : 'bg-[#FFEAD0]'
+          }  
+            py-2 px-4 rounded-md hover:bg-[#115E59] hover:text-white `}>
           Rugged
-        </Link>
-        <Link to="." className="underline ml-auto">
+        </button>
+        <button
+          onClick={() => setSearchParams({})}
+          className="underline ml-auto">
           Clear filters
-        </Link>
+        </button>
       </nav>
 
       <section className="grid grid-cols-custom1 gap-8 mt-8">
