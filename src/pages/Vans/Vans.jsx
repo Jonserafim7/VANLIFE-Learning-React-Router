@@ -1,10 +1,16 @@
 import React, { useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
 
 export default function Vans() {
   // get the van data from the outlet context
   const { vansData, setVansData, vansClasses } = useContext(AppContext)
+
+  // get the search params from the URL
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  // get the type filter from the search params
+  const typeFilter = searchParams.get('type')
 
   // async function to fetch the van data from the mock server
   const fetchVansData = async () => {
@@ -22,8 +28,16 @@ export default function Vans() {
     fetchVansData()
   }, [])
 
+  // filter the van data based on the type filter
+  const filedteredVans = vansData.filter((van) => {
+    if (typeFilter) {
+      return van.type === typeFilter
+    }
+    return van
+  })
+
   // map the van data to JSX elements
-  const vansElements = vansData.map((van) => {
+  const vansElements = filedteredVans.map((van) => {
     return (
       <Link to={`/vans/${van.id}`} key={van.id}>
         <div className="flex flex-col">
@@ -59,10 +73,24 @@ export default function Vans() {
       <h1 className="text-3xl font-bold">Explore our van options</h1>
 
       <nav className="flex gap-4 items-center mt-4">
-        <button className="bg-[#FFEAD0] py-2 px-4 rounded-md">Simple</button>
-        <button className="bg-[#FFEAD0] py-2 px-4 rounded-md">Luxury</button>
-        <button className="bg-[#FFEAD0] py-2 px-4 rounded-md">Rugged</button>
-        <button className="underline ml-auto">Clear filters</button>
+        <Link
+          to="?type=simple"
+          className={`${typeFilter === 'simple' ? 'shadow-md bg-[#E17654] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#E17654] hover:text-white `}>
+          Simple
+        </Link>
+        <Link
+          to="?type=luxury"
+          className={`${typeFilter === 'luxury' ? 'shadow-md bg-[#161616] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#161616] hover:text-white `}>
+          Luxury
+        </Link>
+        <Link
+          to="?type=rugged"
+          className={`${typeFilter === 'rugged' ? 'shadow-md bg-[#115E59] text-white' : 'bg-[#FFEAD0]'}  py-2 px-4 rounded-md hover:bg-[#115E59] hover:text-white `}>
+          Rugged
+        </Link>
+        <Link to="." className="underline ml-auto">
+          Clear filters
+        </Link>
       </nav>
 
       <section className="grid grid-cols-custom1 gap-8 mt-8">
