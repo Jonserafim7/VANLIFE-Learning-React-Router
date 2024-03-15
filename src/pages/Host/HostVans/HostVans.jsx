@@ -1,8 +1,10 @@
-import { Link, useOutletContext } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AppContext } from '../../../Components/Layout'
 
 export default function HostVans() {
   // get the hostVans state variable from the AppContext
-  const { hostVans } = useOutletContext()
+  const { hostVans } = useContext(AppContext)
 
   // map the hostVans state variable to a list of van components
   const hostVansElements = hostVans.map((van) => {

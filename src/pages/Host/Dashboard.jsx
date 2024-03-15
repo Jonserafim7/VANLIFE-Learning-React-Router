@@ -1,7 +1,7 @@
-import { useOutletContext } from 'react-router-dom'
-
+import { useContext } from 'react'
+import { AppContext } from '../../Components/Layout'
 export default function Dashboard() {
-  const { hostVans } = useOutletContext()
+  const { hostVans } = useContext(AppContext)
 
   const vansElements = hostVans.map((van) => {
     return (

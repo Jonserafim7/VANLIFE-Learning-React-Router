@@ -1,14 +1,10 @@
-import {
-  useParams,
-  NavLink,
-  Outlet,
-  Link,
-  useOutletContext,
-} from 'react-router-dom'
+import React, { useContext } from 'react'
+import { useParams, NavLink, Outlet, Link } from 'react-router-dom'
+import { AppContext } from '../../../Components/Layout'
 
 export default function HostVanLayout() {
   // get the van data and the vansClasses function from the context
-  const { hostVans, vansClasses } = useOutletContext()
+  const { hostVans, vansClasses } = useContext(AppContext)
 
   // get the id from the URL
   const { id } = useParams()

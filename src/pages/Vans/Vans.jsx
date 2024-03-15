@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useOutletContext } from 'react-router-dom'
+import { AppContext } from '../../Components/Layout'
 
 export default function Vans() {
   // get the van data from the outlet context
-  const { vansData, setVansData, vansClasses } = useOutletContext()
+  const { vansData, setVansData, vansClasses } = useContext(AppContext)
 
   // async function to fetch the van data from the mock server
   const fetchVansData = async () => {

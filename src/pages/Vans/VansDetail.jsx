@@ -1,8 +1,10 @@
-import { Link, useParams, useOutletContext } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import { AppContext } from '../../Components/Layout'
 
 export default function VansDetail() {
   // get the van data and the vansClasses function from the context
-  const { vansData, vansClasses } = useOutletContext()
+  const { vansData, vansClasses } = useContext(AppContext)
 
   // get the id from the URL
   const { id } = useParams()

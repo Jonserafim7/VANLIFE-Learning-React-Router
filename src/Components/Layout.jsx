@@ -22,22 +22,23 @@ export default function Layout() {
   }
 
   return (
-    <div className="h-full flex flex-col relative">
-      <Header />
-      <main className="flex grow flex-col mt-24 bg-[#FFF7ED]">
-        <Outlet
-          context={{
-            vansData,
-            setVansData,
-            hostVans,
-            setHostVans,
-            signedIn,
-            setSignedIn,
-            vansClasses,
-          }}
-        />
-      </main>
-      <Footer />
-    </div>
+    <AppContext.Provider
+      value={{
+        vansData,
+        setVansData,
+        hostVans,
+        setHostVans,
+        signedIn,
+        setSignedIn,
+        vansClasses,
+      }}>
+      <div className="h-full flex flex-col relative">
+        <Header />
+        <main className="flex grow flex-col mt-24 bg-[#FFF7ED]">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </AppContext.Provider>
   )
 }
