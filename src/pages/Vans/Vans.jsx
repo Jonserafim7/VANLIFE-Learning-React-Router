@@ -39,7 +39,10 @@ export default function Vans() {
   // map the van data to JSX elements
   const vansElements = filedteredVans.map((van) => {
     return (
-      <Link to={`/vans/${van.id}`} key={van.id}>
+      <Link
+        to={van.id}
+        key={van.id}
+        state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
         <div className="flex flex-col">
           <img
             className="rounded-md w-full object-cover"
@@ -68,13 +71,25 @@ export default function Vans() {
     )
   })
 
+  // function to generate a new search param string
+  function genNewSearchParamString(key, value) {
+    const sp = new URLSearchParams(searchParams)
+    if (value === null) {
+      sp.delete(key)
+    } else {
+      sp.set(key, value)
+    }
+    return `?${sp.toString()}`
+  }
+
+  // return the jsx
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold">Explore our van options</h1>
 
       <nav className="flex gap-4 items-center mt-4">
-        <button
-          onClick={() => setSearchParams({ type: 'simple' })}
+        <Link
+          to={genNewSearchParamString('type', 'simple')}
           className={`${
             typeFilter === 'simple'
               ? 'shadow-md bg-[#E17654] text-white'
@@ -82,9 +97,9 @@ export default function Vans() {
           }  
             py-2 px-4 rounded-md hover:bg-[#E17654] hover:text-white `}>
           Simple
-        </button>
-        <button
-          onClick={() => setSearchParams({ type: 'luxury' })}
+        </Link>
+        <Link
+          to={genNewSearchParamString('type', 'luxury')}
           className={`${
             typeFilter === 'luxury'
               ? 'shadow-md bg-[#161616] text-white'
@@ -92,9 +107,9 @@ export default function Vans() {
           }  
             py-2 px-4 rounded-md hover:bg-[#161616] hover:text-white `}>
           Luxury
-        </button>
-        <button
-          onClick={() => setSearchParams({ type: 'rugged' })}
+        </Link>
+        <Link
+          to={genNewSearchParamString('type', 'rugged')}
           className={`${
             typeFilter === 'rugged'
               ? 'shadow-md bg-[#115E59] text-white'
@@ -102,12 +117,14 @@ export default function Vans() {
           }  
             py-2 px-4 rounded-md hover:bg-[#115E59] hover:text-white `}>
           Rugged
-        </button>
-        <button
-          onClick={() => setSearchParams({})}
-          className="underline ml-auto">
-          Clear filters
-        </button>
+        </Link>
+        {typeFilter ? (
+          <Link
+            to={genNewSearchParamString('type', null)}
+            className="underline">
+            Clear filters
+          </Link>
+        ) : null}
       </nav>
 
       <section className="grid grid-cols-custom1 gap-8 mt-8">

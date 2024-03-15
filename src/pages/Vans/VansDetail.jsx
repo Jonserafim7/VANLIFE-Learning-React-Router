@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
 
 export default function VansDetail() {
   // get the van data and the vansClasses function from the context
   const { vansData, vansClasses } = useContext(AppContext)
+
+  // get the location object from the router
+  const location = useLocation()
+  console.log(location)
 
   // get the id from the URL
   const { id } = useParams()
@@ -12,10 +16,16 @@ export default function VansDetail() {
   // find the van with the id that matches the id from the URL
   const van = vansData.find((van) => van.id === id)
 
+  // return the jsx for the van detail page
   return van ? (
     <div className="p-8">
-      <Link to="/vans" className="hover:underline">
-        Back
+      <Link
+        to={`..${location.state?.search}` || '..'}
+        relative="path"
+        className="hover:underline">
+        {location.state?.type === van.type
+          ? `Back to ${van.type} vans`
+          : 'Back to all vans'}
       </Link>
 
       <section className="container mt-8 flex flex-col  mx-auto">

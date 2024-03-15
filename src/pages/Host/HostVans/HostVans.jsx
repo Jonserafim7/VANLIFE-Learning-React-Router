@@ -11,7 +11,7 @@ export default function HostVans() {
     return (
       <Link
         key={van.id}
-        to={`/host/vans/${van.id}`}
+        to={van.id}
         className="hover:shadow-md hover:scale-[102%] transition ease-in-out">
         <div
           key={van.id}
