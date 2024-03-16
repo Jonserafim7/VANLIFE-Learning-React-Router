@@ -14,7 +14,7 @@ export default function Layout() {
   // state variable to store the signed in status
   const [signedIn, setSignedIn] = useState(true)
 
-  // function to return the appropriate class based on the van type
+  // function to return the appropriate bg-color based on the van type
   const vansClasses = (van) => {
     if (van.type === 'simple') return 'bg-[#E17654]'
     if (van.type === 'luxury') return 'bg-[#161616]'
