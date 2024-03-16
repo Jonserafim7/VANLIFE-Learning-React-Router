@@ -4,7 +4,8 @@ import { AppContext } from '../../Components/Layout'
 
 export default function Vans() {
   // get the van data from the outlet context
-  const { vansData, setVansData, vansClasses } = useContext(AppContext)
+  const { vansData, setVansData, vansClasses, setLoading, loading } =
+    useContext(AppContext)
 
   // get the search params from the URL
   const [searchParams, setSearchParams] = useSearchParams()
@@ -15,9 +16,12 @@ export default function Vans() {
   // async function to fetch the van data from the mock server
   const fetchVansData = async () => {
     try {
+      setLoading(true)
       const response = await fetch('/api/vans')
       const data = await response.json()
+      console.log('data', data)
       setVansData(data.vans)
+      setLoading(false)
     } catch (error) {
       console.error('Error fetching van data', error)
     }
@@ -80,6 +84,11 @@ export default function Vans() {
       sp.set(key, value)
     }
     return `?${sp.toString()}`
+  }
+
+  // if the data is still loading, return a loading message
+  if (loading) {
+    return <div>Loading...</div>
   }
 
   // return the jsx

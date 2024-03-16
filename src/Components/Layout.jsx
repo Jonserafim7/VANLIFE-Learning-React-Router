@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react'
 import Header from './Header'
 import Footer from './Footer'
+import NotFound from '../pages/NotFound'
 import { Outlet } from 'react-router-dom'
 
 // create a context to store the state variables and share them with the child components
@@ -13,6 +14,8 @@ export default function Layout() {
   const [hostVans, setHostVans] = useState([])
   // state variable to store the signed in status
   const [signedIn, setSignedIn] = useState(true)
+  // state variable to store the load status
+  const [loading, setLoading] = useState(false)
 
   // function to return the appropriate bg-color based on the van type
   const vansClasses = (van) => {
@@ -31,6 +34,8 @@ export default function Layout() {
         signedIn,
         setSignedIn,
         vansClasses,
+        loading,
+        setLoading,
       }}>
       <div className="h-full flex flex-col relative">
         <Header />
