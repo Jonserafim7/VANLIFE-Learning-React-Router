@@ -6,6 +6,8 @@ import '/src/index.css'
 import Layout from './Components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
+import NotFound from './pages/NotFound'
+
 import Vans from './pages/Vans/Vans'
 import VansDetail from './pages/Vans/VansDetail'
 
@@ -41,6 +43,7 @@ export default function App() {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
