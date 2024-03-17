@@ -1,24 +1,51 @@
 import React, { useEffect, useContext } from 'react'
 import { Outlet, NavLink } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
+import NotFound from '../NotFound'
 
 export default function HostLayout() {
-  const { setHostVans, signedIn, hostVans, vansClasses } =
+  // destructure the state variables and functions from the context
+  const { setHostVans, loading, setLoading, error, setError } =
     useContext(AppContext)
 
-  // if the user is signed in,
-  // fetch the host vans data when the component mounts
-  // and update the hostVans state variable
-  useEffect(() => {
-    if (signedIn) {
-      fetch('/api/host/vans')
-        .then((response) => response.json())
-        .then((data) => {
-          setHostVans(data.vans)
-        })
+  // async function to fetch the host van data from the mock server
+  const fetchHostVans = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch('/api/host/vans')
+      const data = await response.json()
+      if (!response.ok) {
+        throw {
+          message: 'Failed to fetch host vans',
+          status: response.status,
+          statusText: response.statusText,
+        }
+      }
+      setHostVans(data.vans)
+    } catch (error) {
+      console.error('Error fetching host van data', error)
+      setError(error)
+    } finally {
+      setLoading(false)
     }
+  }
+
+  // fetch the host van data when the component mounts
+  useEffect(() => {
+    fetchHostVans()
   }, [])
 
+  // if the data is loading, display a loading message
+  if (loading) {
+    return <p className="p-8 font-bold text-2xl">Loading...</p>
+  }
+
+  // if there is an error, return the not found page
+  if (error) {
+    return <NotFound />
+  }
+
+  // else, return the host layout page
   return (
     <>
       <nav className="flex gap-3 p-8 container">
@@ -56,7 +83,7 @@ export default function HostLayout() {
         </NavLink>
       </nav>
 
-      <Outlet context={{ hostVans, vansClasses }} />
+      <Outlet />
     </>
   )
 }

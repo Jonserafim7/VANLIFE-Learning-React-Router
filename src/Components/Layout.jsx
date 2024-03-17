@@ -16,6 +16,8 @@ export default function Layout() {
   const [signedIn, setSignedIn] = useState(true)
   // state variable to store the load status
   const [loading, setLoading] = useState(false)
+  // state variable to store the error status
+  const [error, setError] = useState(null)
 
   // function to return the appropriate bg-color based on the van type
   const vansClasses = (van) => {
@@ -34,6 +36,8 @@ export default function Layout() {
         signedIn,
         setSignedIn,
         vansClasses,
+        error,
+        setError,
         loading,
         setLoading,
       }}>
