@@ -9,7 +9,6 @@ export default function VansDetail() {
 
   // get the location object from the router
   const location = useLocation()
-  console.log(location)
 
   // get the id from the URL
   const { id } = useParams()
