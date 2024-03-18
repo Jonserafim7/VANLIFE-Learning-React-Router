@@ -41,9 +41,9 @@ export default function HostLayout() {
   }
 
   // if there is an error, return the not found page
-  if (error) {
-    return <NotFound />
-  }
+  // if (error) {
+  //   return <NotFound />
+  // }
 
   // else, return the host layout page
   return (
