@@ -13,11 +13,11 @@ export default function Layout() {
   // state variable to store the host vans data fetched from the mock server
   const [hostVans, setHostVans] = useState([])
   // state variable to store the signed in status
-  const [signedIn, setSignedIn] = useState(true)
-  // state variable to store the load status
   const [loading, setLoading] = useState(false)
   // state variable to store the error status
   const [error, setError] = useState(null)
+  // state variable to store the authenticated status
+  const [authenticated, setAuthenticated] = useState(false)
 
   // function to return the appropriate bg-color based on the van type
   const vansClasses = (van) => {
@@ -33,13 +33,13 @@ export default function Layout() {
         setVansData,
         hostVans,
         setHostVans,
-        signedIn,
-        setSignedIn,
         vansClasses,
         error,
         setError,
         loading,
         setLoading,
+        authenticated,
+        setAuthenticated,
       }}>
       <div className="h-full flex flex-col relative">
         <Header />
