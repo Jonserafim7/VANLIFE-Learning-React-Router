@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
 import NotFound from '../NotFound'
-import { getVans } from '../../api'
 
 export default function Vans() {
   // destructure the context
@@ -22,68 +21,39 @@ export default function Vans() {
   // get the type filter from the search params
   const typeFilter = searchParams.get('type')
 
-  // fetch the van data when the component mounts
-  useEffect(() => {
-    // async function to fetch the van data from the real server
-    async function loadVans() {
-      // Sets the loading state to true at the start of the function.
-      setLoading(true)
-      try {
-        // Fetches data from the firestore database
-        // by calling the getVans function from the api module.
-        const vans = await getVans()
-        // Sets the vans data state with the fetched data.
-        setVansData(vans)
-      } catch (error) {
-        // If an error occurs at any point in the try block,
-        // it catches the error, logs it to the console, and sets the error state with the error.
-        console.error('Error fetching van data', error)
-        setError(error)
-      } finally {
-        // Whether an error occurs or not, it sets the loading state to false at the end of the function.
-        setLoading(false)
+  // async function to fetch the van data from the mock server
+  const fetchVansData = async () => {
+    // set the loading state to true
+    setLoading(true)
+    //
+    try {
+      // fetch the van data from the mock server
+      const response = await fetch('/api/vans')
+      // parse the response to JSON
+      const data = await response.json()
+      // if the response is not ok, throw an error
+      if (!response.ok) {
+        throw {
+          message: 'Failed to fetch vans',
+          status: response.status,
+          statusText: response.statusText,
+        }
       }
+      // set the van data in the context
+      setVansData(data.vans)
+    } catch (error) {
+      // set the error state in the context
+      setError(error)
+    } finally {
+      // set the loading state to false
+      setLoading(false)
     }
-    loadVans()
+  }
+
+  // call the fetchVansData function when the component mounts
+  useEffect(() => {
+    fetchVansData()
   }, [])
-
-  // // async function to fetch the van data from the mock server
-  // const fetchVansData = async () => {
-  //   /* function explanation:
-  //     Sets the loading state to true at the start of the function.
-  //     Fetches data from the /api/vans endpoint.
-  //     If the response is not OK (status code is not in the range 200-299), it throws an error with a custom message and the status code.
-  //     If the response is OK, it parses the JSON data from the response.
-  //     Sets the vans data state with the parsed data.
-  //     If an error occurs at any point in the try block, it catches the error, logs it to the console, and sets the error state with the error.
-  //     Whether an error occurs or not, it sets the loading state to false at the end of the function.
-  //   */
-  //   setLoading(true)
-  //   try {
-  //     const response = await fetch('/api/vans')
-  //     console.log(response)
-  //     const data = await response.json()
-  //     console.log(data)
-  //     if (!response.ok) {
-  //       throw {
-  //         message: 'Failed to fetch vans',
-  //         status: response.status,
-  //         statusText: response.statusText,
-  //       }
-  //     }
-  //     setVansData(data.vans)
-  //   } catch (error) {
-  //     console.error('Error fetching van data', error)
-  //     setError(error)
-  //   } finally {
-  //     setLoading(false)
-  //   }
-  // }
-
-  // // fetch the van data when the component mounts
-  // useEffect(() => {
-  //   fetchVansData()
-  // }, [])
 
   // filter the van data based on the type filter
   const getVansElements = () => {
