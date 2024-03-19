@@ -5,13 +5,15 @@ import { initializeApp } from 'firebase/app'
 // getFirestore is a function that initializes the firestore app
 // /lite is a lightweight version of the firestore app
 import {
-  getFirestore,
-  collection,
-  doc,
-  getDocs,
-  getDoc,
-  setDoc,
-  deleteDoc,
+  getFirestore, // getFirestore is a function that initializes the firestore app
+  collection, // collection is a function that returns a reference to a collection in the firestore database
+  doc, // doc is a function that returns a reference to a document in the firestore database
+  getDocs, // getDocs is a function that returns a snapshot of the documents in a collection
+  getDoc, // getDoc is a function that returns a snapshot of a document in the firestore database
+  setDoc, // setDoc is a function that creates or overwrites a document in the firestore database
+  deleteDoc, // deleteDoc is a function that deletes a document from the firestore database
+  query, // query is a function that returns a query object
+  where, // where is a function that creates a query constraint
 } from 'firebase/firestore/lite'
 
 // Your web app's Firebase configuration --------------------------------------------------------------------------------------------
@@ -37,6 +39,7 @@ const db = getFirestore(app)
 // it takes the firestore app (stored in the db variable) and the name of the collection as arguments
 // and returns a reference to the collection
 const vansCollection = collection(db, 'vans')
+const usersCollection = collection(db, 'users')
 
 // function to fetch data from the db --------------------------------------------------------------------------------------------
 
@@ -55,6 +58,28 @@ export const getVans = async () => {
     id: doc.id,
   }))
   // return the array of data objects
+  return vans
+}
+
+export const getHostVans = async () => {
+  //query is a function that returns a query object
+  //where is a function that creates a query constraint
+  //it takes the name of the field, the comparison operator, and the value to compare against as arguments
+  //and returns a query constraint
+  const q = query(vansCollection, where('hostId', '==', '123'))
+  //getDocs is a function that returns a snapshot of the documents in a collection
+  //it takes a query object as an argument
+  //and returns a promise that resolves with the snapshot
+  const dataSnapshot = await getDocs(q)
+  //the snapshot object contains a property called docs
+  //which is an array of document snapshots
+  //we can use the map method to transform the array of document snapshots into an array of data objects
+  //by calling the data method on each document snapshot
+  //and spreading the result into a new object along with the id of the document
+  const vans = dataSnapshot.docs.map((doc) => ({
+    ...doc.data(),
+    id: doc.id,
+  }))
   return vans
 }
 

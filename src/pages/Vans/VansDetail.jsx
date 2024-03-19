@@ -22,7 +22,7 @@ export default function VansDetail() {
     const van = vansData.find((van) => van.id === id)
 
     return (
-      <div className="p-8">
+      <div className="p-8 mx-auto flex flex-col grow">
         <Link
           to={`..${location.state?.search}` || '..'}
           relative="path"
@@ -32,17 +32,17 @@ export default function VansDetail() {
             : 'Back to all vans'}
         </Link>
 
-        <section className="container mt-8 flex flex-col  mx-auto">
+        <section className="max-w-4xl flex grow gap-8 my-auto mt-8">
           <img
-            className="rounded-md w-full object-cover object-center max-h-[500px]"
+            className="rounded-md object-cover object-center grow-1 max-h-[600px] w-full"
             src={van.imageUrl}
             alt={`${van.name} + image`}
           />
 
           <div className="flex flex-col gap-4">
             <p
-              className={`py-1 px-5 rounded-md w-max 
-              ${vansClasses(van)} text-white mt-8`}>
+              className={`py-1 px-5 rounded-md w-max text-white
+              ${vansClasses(van)}`}>
               {van.type}
             </p>
             <div className="">
