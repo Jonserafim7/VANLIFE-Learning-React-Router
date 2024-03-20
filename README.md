@@ -15,15 +15,7 @@
 
 ### Overview
 
-This is a simple project from the scrimba frontend developer career path.
-
-- **Goal of this project:**
-  Learn the react router library to provide client side routing for our single page application.
-- **To achieve this goal:**
-  I built a van hosting website where users can browse through the catalogue of listed vans and view the details of each listed van and also host their own vans through the host page.
-- **About Scrimba:**
-  Scrimba is a platform that offers interactive and hands-on learning experiences for frontend development. It offers a variety of courses and career paths to help you learn and master frontend development skills. The frontend developer career path is a comprehensive course that covers the basics of HTML, CSS, and JavaScript, as well as more advanced topics like React and responsive web design. The course is designed to help you build a strong foundation in frontend development and prepare you for a career in the field. The course is taught by industry professionals and includes real-world projects and hands-on exercises to help you apply what you've learned. The course is self-paced and can be completed in as little as 3 months. It's a great option for anyone looking to break into the field of frontend development and build a career in tech. You can learn more about the course and sign up for a free trial at the link below
-  <https://scrimba.com/learn/frontend>
+This project is part of the [Frontend Developer Career Path](https://scrimba.com/learn/frontend) on Scrimba. The main goal of this project is to learn the react router library to provide client side routing for our single page application. The project is a van hosting website where users can browse through the catalogue of listed vans and view the details of each listed van and also host their own vans through the host page.
 
 ### Main topics learned
 
@@ -44,6 +36,11 @@ This is a simple project from the scrimba frontend developer career path.
 
 - This project is a learning project and is not intended for commercial use.
 - The main focus was to learn react router and not to create a fully functional website, therefore there are still many features that can be added to make it a fully functional website.
+- The website is not connected to a real database, so the data is hardcoded in a mock server created using miragejs. Miragejs is a library that allows us to create a fake server to simulate a real server and test our application without having to connect to a real server.
+- The website is not connected to a real authentication system, so it's only possible to sign in using a hardcoded user.
+- To access the host page, you can use the following credentials:
+  - **Email:** `b@b.com`
+  - **Password:** `p123`
 
 ### To-Dos
 
