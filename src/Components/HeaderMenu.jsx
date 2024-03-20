@@ -34,7 +34,7 @@ export default function BasicMenu({ authenticated }) {
         Dashboard
       </Button>
       <Menu
-        sx={{ '& .MuiList-root': { backgroundColor: '#ffcc8d' } }}
+        sx={{ '& .MuiList-root': { backgroundColor: '#FFF7ED' } }}
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -42,30 +42,28 @@ export default function BasicMenu({ authenticated }) {
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <NavLink
             to="host"
             className={`text-lg ${({ isActive }) => activeStyle(isActive)}`}>
             Host
           </NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <NavLink
             to="about"
-            About
             className={`text-lg ${({ isActive }) => activeStyle(isActive)}`}>
             About
           </NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           <NavLink
             to="vans"
-            Vans
             className={`text-lg ${({ isActive }) => activeStyle(isActive)}`}>
             Vans
           </NavLink>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem>
           {authenticated ? (
             <button
               className="hover:text-orange-500 text-lg"

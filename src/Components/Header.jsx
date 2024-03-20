@@ -14,15 +14,15 @@ export default function Header() {
   const { authenticated, setAuthenticated } = useContext(AppContext)
 
   // The useMediaQuery hook is used to determine the screen size of the device.
-  const isLargeScreen = useMediaQuery({ minDeviceWidth: 376 })
-  const isSmallScreen = useMediaQuery({ maxDeviceWidth: 375 })
+  const isLargeScreen = useMediaQuery({ minDeviceWidth: 426 })
+  const isSmallScreen = useMediaQuery({ maxDeviceWidth: 425 })
 
   // The activeStyle function is used to apply a style to the active link.
   const activeStyle = (match) => {
     if (!match) {
-      return 'hover:text-orange-500'
+      return 'text-lg hover:underline'
     }
-    return 'underline font-light text-base hover:text-orange-500'
+    return 'underline font-bold text-lg'
   }
 
   // The useNavigate hook is used to navigate between different pages in the application.
@@ -57,34 +57,30 @@ export default function Header() {
             <NavLink
               to="host"
               // className={({ isActive }) => activeStyle(isActive)}>
-              className={`text-lg ${({ isActive }) => activeStyle(isActive)}`}>
+              className={({ isActive }) => activeStyle(isActive)}>
               Host
             </NavLink>
 
             <NavLink
               to="about"
-              About
-              className={`text-lg font-light ${({ isActive }) => activeStyle(isActive)}`}>
+              className={({ isActive }) => activeStyle(isActive)}>
               About
             </NavLink>
 
             <NavLink
               to="vans"
-              Vans
-              className={`text-lg font-light ${({ isActive }) => activeStyle(isActive)}`}>
+              className={({ isActive }) => activeStyle(isActive)}>
               Vans
             </NavLink>
 
             {authenticated ? (
-              <button
-                className="hover:text-orange-500 text-lg font-light"
-                onClick={handleSignOut}>
+              <button className="hover:underline" onClick={handleSignOut}>
                 Sign Out
               </button>
             ) : (
               <NavLink
                 to={`${authenticated ? 'host' : 'UserAccountSignIn'}`}
-                className="hover:text-orange-500 text-lg font-light">
+                className={({ isActive }) => activeStyle(isActive)}>
                 {authenticated ? 'Sign Out' : 'Sign In'}
               </NavLink>
             )}

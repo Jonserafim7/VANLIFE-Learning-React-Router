@@ -54,56 +54,58 @@ export default function Dashboard() {
 
   // return the dashboard page
   return (
-    // page container
     <div className="pb-14 flex flex-col">
-      {/* overview section */}
-      <section>
-        {/* income information */}
-        <div className="bg-[#FFEAD0] px-8 py-4">
-          <div className=" flex flex-col gap-3 w-full container max-w-3xl mx-auto">
+      {/* income section */}
+      <section className="py-5 px-8 bg-[#FFEAD0] ">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex flex-col gap-3">
             <h1 className="text-3xl font-bold">Welcome!</h1>
             <div className="flex">
               <h2>
                 Income last <span className="underline">30 days</span>
               </h2>
-              <button className="ml-auto">Details</button>
+              <button className="ml-auto hover:underline">Details</button>
             </div>
             <h3 className="text-4xl font-black">
               ${userData?.userInfo?.income?.total}
             </h3>
           </div>
         </div>
+      </section>
 
-        {/* reviews information */}
-        <div className="bg-[#FFDDB2] px-8 py-4">
-          <div className=" flex w-full container max-w-3xl mx-auto">
-            <div className="flex items-center gap-2">
-              <h2 className="text-lg font-bold">Review score</h2>
-              <Rating
-                name="read-only"
-                precision={0.5}
-                value={getUserVansRatingsAverage()}
-                readOnly
-              />
-              <h3 className=" ml-1">
-                <span className="font-bold">
-                  {userData?.vans.length > 0 ? getUserVansRatingsAverage() : ''}
-                </span>
-                /5
-              </h3>
-            </div>
-            <button className="ml-auto">Details</button>
+      {/* reviews section */}
+      <section className="py-5 px-8 bg-[#FFDDB2] ">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex gap-3">
+            <h2 className="text-lg font-bold">Review score</h2>
+            <Rating
+              name="read-only"
+              precision={0.5}
+              value={getUserVansRatingsAverage()}
+              readOnly
+            />
+            <h3 className=" ml-1">
+              <span className="font-bold">
+                {userData?.vans.length > 0 ? getUserVansRatingsAverage() : ''}
+              </span>
+              /5
+            </h3>
+            <button className="ml-auto hover:underline">Details</button>
           </div>
         </div>
       </section>
 
       {/* vans section */}
-      <section className="flex flex-col px-8 container max-w-3xl mx-auto">
-        <div className="flex py-5">
-          <h2 className="text-lg font-bold">Your listed vans</h2>
-          <button className="ml-auto hover:underline">View all</button>
+      <section className="py-5 px-8 ">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex flex-col gap-5">
+            <div className="flex">
+              <h2 className="text-lg font-bold">Your listed vans</h2>
+              <button className="ml-auto hover:underline">View all</button>
+            </div>
+            <div className="flex flex-col gap-4">{getVansElements()}</div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4">{getVansElements()}</div>
       </section>
     </div>
   )

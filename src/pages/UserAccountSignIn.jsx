@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from '../Components/Layout'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, Link } from 'react-router-dom'
 
 export default function UserAccountSignIn() {
   // destructure the setAuthenticated function from the context
@@ -130,9 +130,7 @@ export default function UserAccountSignIn() {
       </form>
       <p className="mt-8 font-bold">
         Don't have an account?{' '}
-        <a href="a" className="text-orange-500">
-          Create one now
-        </a>
+        <Link className="text-orange-500">Create one now</Link>
       </p>
     </div>
   )
