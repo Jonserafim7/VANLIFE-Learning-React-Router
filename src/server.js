@@ -16,6 +16,17 @@ createServer({
       imageUrl: '/src/Assets/Images/modest-explorer.png',
       type: 'simple',
       hostId: '123',
+      reviews: [
+        {
+          id: '1',
+          vanId: '1',
+          rating: 4,
+          reviewer: 'Alice',
+          content:
+            'The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!!',
+          date: '05/12/2023',
+        },
+      ],
     })
     server.create('van', {
       id: '2',
@@ -26,6 +37,17 @@ createServer({
       imageUrl: '/src/Assets/Images/beach-bum.png',
       type: 'rugged',
       hostId: '123',
+      reviews: [
+        {
+          id: '1',
+          vanId: '2',
+          rating: 5,
+          reviewer: 'Lucas',
+          content:
+            'This is our third time using the Modest Explorer for our travels and we love it! No complaints, absolutely perfect!',
+          date: '01/02/2024',
+        },
+      ],
     })
     server.create('van', {
       id: '3',
@@ -72,6 +94,29 @@ createServer({
       email: 'b@b.com',
       password: 'p123',
       name: 'Bob',
+      income: {
+        total: 2260,
+        transactions: [
+          {
+            id: '1',
+            date: '13/01/2024',
+            amount: 720,
+            description: 'Van rental',
+          },
+          {
+            id: '2',
+            date: '14/05/2021',
+            amount: 560,
+            description: 'Van rental',
+          },
+          {
+            id: '3',
+            date: '27/02/2022',
+            amount: 980,
+            description: 'Van rental',
+          },
+        ],
+      },
     })
   },
 
@@ -101,6 +146,11 @@ createServer({
       // Hard-code the hostId for now
       const id = request.params.id
       return schema.vans.where({ id, hostId: '123' })
+    })
+    this.get('/user', (schema, request) => {
+      // Hard-code the hostId for now
+      const id = request.params.id
+      return schema.users.where({ id, id: '123' })
     })
 
     this.post('/login', (schema, request) => {

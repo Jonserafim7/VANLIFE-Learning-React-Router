@@ -1,3 +1,4 @@
+// imports
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import '/src/server.js'
@@ -24,9 +25,18 @@ import HostVanDetails from './pages/Host/HostVans/HostVanDetails'
 import HostVanPricing from './pages/Host/HostVans/HostVanPricing'
 import HostVanPhotos from './pages/Host/HostVans/HostVanPhotos'
 
+// The App component is the root component of the application.
 export default function App() {
   return (
+    // The BrowserRouter component is used to wrap the application.
+    // It provides the routing functionality to the application.
     <BrowserRouter>
+      {/* The Routes component is used to define the routes of the application. */}
+      {/* The Route component is used to define the individual routes of the application. */}
+      {/* The path prop is used to define the path of the route. */}
+      {/* The element prop is used to define the component to be rendered when the route is matched. */}
+      {/* The index prop is used to define the default route of the application. */}
+      {/* The * path is used to define the 404 route of the application. */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

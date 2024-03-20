@@ -1,15 +1,15 @@
-import { useContext } from 'react'
-import { AppContext } from '../../Components/Layout'
+import { useOutletContext } from 'react-router'
+import Rating from '@mui/material/Rating'
 
 export default function Dashboard() {
   // destructure the hostVans state variable from the context
-  const { hostVans } = useContext(AppContext)
+  const { userData } = useOutletContext()
 
   // function to map over the hostVans and return the van elements
   const getVansElements = () => {
-    if (!hostVans) return <p>No vans available</p>
+    if (!userData?.vans) return <p>No vans available</p>
     else {
-      const vansElements = hostVans.map((van) => {
+      const vansElements = userData.vans.map((van) => {
         return (
           <div
             key={van.id}
@@ -34,43 +34,71 @@ export default function Dashboard() {
     }
   }
 
+  // function to get the average rating of the user's vans
+  const getUserVansRatingsAverage = () => {
+    if (userData?.vans.length > 0) {
+      const ratingsArray = userData?.vans?.map((van) => {
+        if (!van.reviews) return []
+        else {
+          return van.reviews.map((review) => {
+            return review.rating
+          })
+        }
+      })
+      return (
+        ratingsArray.flat().reduce((acc, curr) => acc + curr, 0) /
+        ratingsArray.flat().length
+      )
+    }
+  }
+
   // return the dashboard page
   return (
     // page container
-    <div className="px-8 pb-14 flex flex-col">
+    <div className="pb-14 flex flex-col">
       {/* overview section */}
-      <section className="mx-[-32px]">
+      <section>
         {/* income information */}
-        <div className="bg-[#FFEAD0] px-8 py-4 flex flex-col gap-3">
-          <h1 className="text-3xl font-bold">Welcome!</h1>
-          <div className="flex">
-            <h2>
-              Income last <span className="underline">30 days</span>
-            </h2>
-            <button className="ml-auto">Details</button>
+        <div className="bg-[#FFEAD0] px-8 py-4">
+          <div className=" flex flex-col gap-3 w-full container max-w-3xl mx-auto">
+            <h1 className="text-3xl font-bold">Welcome!</h1>
+            <div className="flex">
+              <h2>
+                Income last <span className="underline">30 days</span>
+              </h2>
+              <button className="ml-auto">Details</button>
+            </div>
+            <h3 className="text-4xl font-black">
+              ${userData?.userInfo?.income?.total}
+            </h3>
           </div>
-          <h3 className="text-4xl font-black">$0.00</h3>
         </div>
 
         {/* reviews information */}
-        <div className="bg-[#FFDDB2] px-8 py-4 flex">
-          <div className="flex items-center">
-            <h2 className="text-lg font-bold">Review score</h2>
-            <img
-              src="/src/Assets/Icons/Star-3.png"
-              className="ml-3"
-              alt="star"
-            />
-            <h3 className="font-bold ml-1">
-              5.0/<span className="font-normal">5</span>
-            </h3>
+        <div className="bg-[#FFDDB2] px-8 py-4">
+          <div className=" flex w-full container max-w-3xl mx-auto">
+            <div className="flex items-center gap-2">
+              <h2 className="text-lg font-bold">Review score</h2>
+              <Rating
+                name="read-only"
+                precision={0.5}
+                value={getUserVansRatingsAverage()}
+                readOnly
+              />
+              <h3 className=" ml-1">
+                <span className="font-bold">
+                  {userData?.vans.length > 0 ? getUserVansRatingsAverage() : ''}
+                </span>
+                /5
+              </h3>
+            </div>
+            <button className="ml-auto">Details</button>
           </div>
-          <button className="ml-auto">Details</button>
         </div>
       </section>
 
       {/* vans section */}
-      <section className="">
+      <section className="flex flex-col px-8 container max-w-3xl mx-auto">
         <div className="flex py-5">
           <h2 className="text-lg font-bold">Your listed vans</h2>
           <button className="ml-auto hover:underline">View all</button>

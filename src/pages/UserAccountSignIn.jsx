@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function UserAccountSignIn() {
   // destructure the setAuthenticated function from the context
-  const { setAuthenticated, error, setError } = useContext(AppContext)
+  const { setAuthenticated, setError } = useContext(AppContext)
 
   // The loginFormData state is used to store the user's login details
   const [loginFormData, setLoginFormData] = useState({

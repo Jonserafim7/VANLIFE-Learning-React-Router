@@ -1,16 +1,23 @@
 import React, { useContext } from 'react'
-import { useParams, NavLink, Outlet, Link } from 'react-router-dom'
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  Link,
+  useOutletContext,
+} from 'react-router-dom'
 import { AppContext } from '../../../Components/Layout'
 
 export default function HostVanLayout() {
   // get the van data and the vansClasses function from the context
-  const { hostVans, vansClasses } = useContext(AppContext)
+  const { vansClasses } = useContext(AppContext)
+  const { userData } = useOutletContext()
 
   // get the id from the URL
   const { id } = useParams()
 
   // find the van with the id that matches the id from the URL
-  const van = hostVans.find((van) => van.id === id)
+  const van = userData.vans.find((van) => van.id === id)
 
   // display the van data if it exists, otherwise display a message
   const vanElement = van ? (
@@ -38,11 +45,13 @@ export default function HostVanLayout() {
   )
 
   return (
-    <div className="px-8 pb-8">
+    <div className="p-8">
       <Link to=".." relative="path" className="hover:underline hover:font-bold">
         Back to all vans
       </Link>
-      <div className="mt-8">{vanElement}</div>
+
+      <div className="mt-5">{vanElement}</div>
+
       <nav className="flex gap-5 py-5">
         <NavLink
           to={`.`}

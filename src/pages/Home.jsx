@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
+// Link is used to navigate between different pages in the application.
+// It is used to create a hyperlink to the specified path.
 
+// The Home component is used to render the home page of the application.
 export default function Home() {
   return (
     <section className=" text-white bg-[url('/src/Assets/Images/home-bg.png')] bg-cover bg-center flex flex-col items-center grow justify-center">

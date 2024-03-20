@@ -10,8 +10,6 @@ export const AppContext = createContext()
 export default function Layout() {
   // state variable to store the van data fetched from the mock server
   const [vansData, setVansData] = useState([])
-  // state variable to store the host vans data fetched from the mock server
-  const [hostVans, setHostVans] = useState([])
   // state variable to store the signed in status
   const [loading, setLoading] = useState(false)
   // state variable to store the error status
@@ -31,8 +29,6 @@ export default function Layout() {
       value={{
         vansData,
         setVansData,
-        hostVans,
-        setHostVans,
         vansClasses,
         error,
         setError,
@@ -43,7 +39,7 @@ export default function Layout() {
       }}>
       <div className="h-full flex flex-col relative">
         <Header />
-        <main className="flex grow flex-col mt-24 bg-[#FFF7ED]">
+        <main className="flex grow flex-col mt-[6.25rem] bg-[#FFF7ED] w-full">
           <Outlet />
         </main>
         <Footer />

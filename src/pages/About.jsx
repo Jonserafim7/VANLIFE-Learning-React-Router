@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 
+// The About component is used to render the about page of the application.
 export default function About() {
   return (
-    <div className="flex grow flex-col ">
+    <div className="flex grow flex-col py-8 max-w-4xl mx-auto">
       <section className="flex flex-col">
         <img
-          className="oject-cover w-full max-h-[500px]"
+          className="oject-cover w-full max-h-[450px]"
           src="/src/Assets/Images/about-hero-img.png"
         />
         <div className="p-8">

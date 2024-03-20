@@ -1,10 +1,25 @@
-# React + Vite
+# #VANSLIFE
+
+# Table of Contents
+
+- [About this project](#about-this-project)
+- [ToDos](#todos)
+- [Nested Routes quiz](#nested-routes-quiz)
+
+## About this project
+
+This is a simple project from the scrimba frontend developer career path.
+<https://scrimba.com/learn/frontend>
+
+The goal of this project is to learn the react router library.
+The project is a van hosting website where users can browse through
+the catalogue of listed vans and view the details of each van.
 
 ## ToDos
 
 - add real authentication
 
-## Nested Routs quiz
+## Nested Routes quiz
 
 1. What is the primary reason to use a nested route?
    Whenever we have some shared UI between routes in our app.
@@ -14,13 +29,13 @@
    the portion of the UI that will be shared. It will use an Outlet
    component.
 
-3. What does the <Outlet /> component do? When do you use it?
+3. What does the `<Outlet />` component do? When do you use it?
    We use it anytime we have a parent Route that's wrapping
    children routes. It renders the matching child route's
-   `element` prop given in its route definition
+   element prop given in its route definition
 
 4. What is an "Index Route"?
    It's the "default route" we want to render when the path
    of the parent route matches. It gives us a chance to render
-   an element inside the parent's <Outlet /> at the same path
+   an element inside the parent's `<Outlet />` at the same path
    as the parent route.
