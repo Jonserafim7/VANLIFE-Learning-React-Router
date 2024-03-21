@@ -26,7 +26,7 @@ This project is part of the [Frontend Developer Career `Path`](https://scrimba.c
 ### Features
 
 - SPA with 10+ routes
-- Filten by van type
+- Filter by van type
 - Active link styling (a way to easily tell where the user is in the app)
 - Protected routes (certain pages are only accessible to authenticated users)
 - Nested routes (a way to share a common layout between routes)
