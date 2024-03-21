@@ -4,21 +4,28 @@
 
 - [Project Overview](#project-overview)
 
-  - [Project description](#project-description)
+  - [Description](#description)
   - [Features](#features)
+  - [Figma design](#figma-design)
   - [Main topics learned](#main-topics-learned)
+  - [Technologies used](#technologies-used)
   - [Disclaimers](#disclaimers)
   - [To-Dos](#to-dos)
 
 - [React Router glossary](#react-router-glossary)
 
+## Live version
+
+You can check out the live version of this app deployed on Netlify [here](https://vanslifereactrouter.netlify.app/).
+
 ## Project Overview
 
 This project is part of the [Frontend Developer Career `Path`](https://scrimba.com/learn/frontend) on Scrimba.
 
-<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/> is a platform that allows us to learn web development through a combination of video lessons and interactive coding challenges. It's a great way to learn web development because it provides us with a hands-on learning experience that allows us to practice what we're learning in real time.
+<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/> is an online platform that offers interactive coding screencasts. Its main advantage is that it allows you to write and run code directly in the browser, which makes it a great tool for learning how to code, spcially for beginners. As i got more experienced through out the course, i started to use my own code editor and run the code locally.
+I love scrimba because it offers a good mix of theory and practice, allowing me to learn new concepts and apply them in real projects at the same time.
 
-### Project description
+### Description
 
 **VANLIFE** is a website for people to rent out camper vans for their next road trip adventure.
 
@@ -30,6 +37,10 @@ This project is part of the [Frontend Developer Career `Path`](https://scrimba.c
 - Protected routes (certain pages are only accessible to authenticated users)
 - Nested routes (a way to share a common layout between routes)
 - Using mock server to simulate a real server and test the application without having to connect to a real server
+
+### Figma design
+
+The design for this project was created using Figma. You can check it out [here](https://www.figma.com/file/igDA2NiMDhoaIIAqm5EnTq/%23VanLife?type=design&node-id=0-1&mode=design&t=Xjbv1vUBzXWk3mBY-0) (you need to have a Figma account to access it).
 
 ### Main topics learned
 
@@ -55,6 +66,7 @@ This project is part of the [Frontend Developer Career `Path`](https://scrimba.c
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo" width="20"> **HTML:** A markup language that allows us to create the structure of our website.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" width="20"> **CSS:** A styling language that allows us to style the structure of our website.
 - <img src="https://tailwindcss.com/favicons/apple-touch-icon.png?v=3" alt="Tailwind CSS logo" width="20"> **Tailwind CSS:** A utility-first CSS framework that allows us to style our website using utility classes.
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" width="20"> **Figma:** A design tool that allows us to create and share designs for our website.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" width="20"> **Git:** A version control system that allows us to track changes in our code and collaborate with other developers.
 - <img src="src/Assets/Images/github-logo.png" alt="GitHub logo" width="20"> **GitHub:** A platform that allows us to host our code and collaborate with other developers.
 - <img src="/src/Assets/Images/vite-logo.svg" alt="Vite logo" width="20"> **Vite:** A build tool that allows us to build our website and run a development server.
