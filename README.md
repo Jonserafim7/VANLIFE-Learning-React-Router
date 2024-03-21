@@ -16,7 +16,7 @@
 
 This project is part of the [Frontend Developer Career `Path`](https://scrimba.com/learn/frontend) on Scrimba.
 
-<img src="/src/Assets/Images/scrimba.png" alt="scrimba logo" width="110"/>
+<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/>
  is a platform that allows us to learn web development through a combination of video lessons and interactive coding challenges. It's a great way to learn web development because it provides us with a hands-on learning experience that allows us to practice what we're learning in real time.
 
 ### Project description
@@ -57,7 +57,7 @@ This project is part of the [Frontend Developer Career `Path`](https://scrimba.c
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" width="20"> **CSS:** A styling language that allows us to style the structure of our website.
 - <img src="https://tailwindcss.com/favicons/apple-touch-icon.png?v=3" alt="Tailwind CSS logo" width="20"> **Tailwind CSS:** A utility-first CSS framework that allows us to style our website using utility classes.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" width="20"> **Git:** A version control system that allows us to track changes in our code and collaborate with other developers.
-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub logo" width="20"> **GitHub:** A platform that allows us to host our code and collaborate with other developers.
+- <img src="src/Assets/Images/github-logo.png" alt="GitHub logo" width="20"> **GitHub:** A platform that allows us to host our code and collaborate with other developers.
 - <img src="/src/Assets/Images/vite-logo.svg" alt="Vite logo" width="20"> **Vite:** A build tool that allows us to build our website and run a development server.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VsCode logo" width="20"> **VsCode:** A code editor that allows us to write and test our code.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt="Netlify logo" width="20"> **Netlify:** A platform that allows us to deploy our website and make it accessible to the public.
@@ -91,7 +91,7 @@ This project is part of the [Frontend Developer Career `Path`](https://scrimba.c
 
 - `<Route />` is a component that defines a route in our app. It should be placed inside a `<Routes />` component.
 
--`path` is a prop that tells the `<Route />` component which `path` to match.
+- `path` is a prop that tells the `<Route />` component which `path` to match.
 
 - `element` is a prop that tells the `<Route />` component what to render when the `path` matches.
 
