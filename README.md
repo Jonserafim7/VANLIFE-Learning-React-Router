@@ -23,7 +23,7 @@ You can check out the live version of this app deployed on Netlify [here](https:
 
 This project is part of the [Frontend Developer Career `Path`](https://scrimba.com/learn/frontend) on Scrimba.
 
-<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/> is an online platform that offers interactive coding screencasts. Its main advantage is that it allows you to write and run code directly in the browser, which makes it a great tool for learning how to code, spcially for beginners. As i got more experienced through out the course, i started to use my own code editor and run the code locally.
+<img src="/src/Assets/Images/logos/scrimba-logo.png" alt="scrimba logo" width="110"/> is an online platform that offers interactive coding screencasts. Its main advantage is that it allows you to write and run code directly in the browser, which makes it a great tool for learning how to code, spcially for beginners. As i got more experienced through out the course, i started to use my own code editor and run the code locally.
 I love scrimba because it offers a good mix of theory and practice, allowing me to learn new concepts and apply them in real projects at the same time.
 
 ### Description
@@ -60,8 +60,8 @@ The design for this project was created using Figma. You can check it out [here]
 
 ### Technologies used
 
-- <img src="/src/Assets/Images/react-logo.svg" alt="react logo" width="20"> **React:** A JavaScript library for building user interfaces.
-- <img src="/src/Assets/Images/react-router-mark-color.svg" alt="react router logo" width="20"> **React Router:** A library that provides client side routing for our single page application.
+- <img src="/src/Assets/Images/logos/react-logo.svg" alt="react logo" width="20"> **React:** A JavaScript library for building user interfaces.
+- <img src="/src/Assets/Images/logos/react-router-mark-color.svg" alt="react router logo" width="20"> **React Router:** A library that provides client side routing for our single page application.
 - <img src="https://miragejs.com/favicon.svg?v=4b2671f787216000311c3551544b1101" alt="miragejs logo" width="20"> **Miragejs:** A library that allows us to create a fake server to simulate a real server and test our application without having to connect to a real server.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript logo" width="20"> **JavaScript:** A programming language that allows us to add interactivity to our website.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML logo" width="20"> **HTML:** A markup language that allows us to create the structure of our website.
@@ -69,8 +69,8 @@ The design for this project was created using Figma. You can check it out [here]
 - <img src="https://tailwindcss.com/favicons/apple-touch-icon.png?v=3" alt="Tailwind CSS logo" width="20"> **Tailwind CSS:** A utility-first CSS framework that allows us to style our website using utility classes.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma logo" width="20"> **Figma:** A design tool that allows us to create and share designs for our website.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git logo" width="20"> **Git:** A version control system that allows us to track changes in our code and collaborate with other developers.
-- <img src="src/Assets/Images/github-logo.png" alt="GitHub logo" width="20"> **GitHub:** A platform that allows us to host our code and collaborate with other developers.
-- <img src="/src/Assets/Images/vite-logo.svg" alt="Vite logo" width="20"> **Vite:** A build tool that allows us to build our website and run a development server.
+- <img src="src/Assets/Images/logos/github-logo.png" alt="GitHub logo" width="20"> **GitHub:** A platform that allows us to host our code and collaborate with other developers.
+- <img src="/src/Assets/Images/logos/vite-logo.svg" alt="Vite logo" width="20"> **Vite:** A build tool that allows us to build our website and run a development server.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VsCode logo" width="20"> **VsCode:** A code editor that allows us to write and test our code.
 - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg" alt="Netlify logo" width="20"> **Netlify:** A platform that allows us to deploy our website and make it accessible to the public.
 
