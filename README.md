@@ -16,8 +16,7 @@
 
 This project is part of the [Frontend Developer Career `Path`](https://scrimba.com/learn/frontend) on Scrimba.
 
-<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/>
- is a platform that allows us to learn web development through a combination of video lessons and interactive coding challenges. It's a great way to learn web development because it provides us with a hands-on learning experience that allows us to practice what we're learning in real time.
+<img src="/src/Assets/Images/scrimba-logo.png" alt="scrimba logo" width="110"/> is a platform that allows us to learn web development through a combination of video lessons and interactive coding challenges. It's a great way to learn web development because it provides us with a hands-on learning experience that allows us to practice what we're learning in real time.
 
 ### Project description
 
