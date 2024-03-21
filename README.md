@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+- [Live version](#live-version)
 - [Project Overview](#project-overview)
 
   - [Description](#description)
