@@ -75,12 +75,12 @@ export default function Vans() {
             state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
             <div className="flex flex-col">
               <img
-                className="rounded-md w-full object-cover"
+                className="w-full rounded-md object-cover"
                 src={van.imageUrl}
                 alt={`${van.name} + image`}
               />
 
-              <div className="flex flex-col mt-1">
+              <div className="mt-1 flex flex-col">
                 <div className="flex">
                   <p className="text-lg font-semibold">{van.name}</p>
 
@@ -91,8 +91,8 @@ export default function Vans() {
                 </div>
 
                 <p
-                  className={`py-1 px-5 rounded-md w-max 
-                ${vansClasses(van)} text-white mt-1`}>
+                  className={`w-max rounded-md px-5 py-1 
+                ${vansClasses(van)} mt-1 text-white`}>
                   {van.type}
                 </p>
               </div>
@@ -120,7 +120,7 @@ export default function Vans() {
   // if the data is still loading, return a loading message
   if (loading) {
     return (
-      <h1 className="p-8 font-bold text-lg" aria-live="polite">
+      <h1 className="p-8 text-lg font-bold" aria-live="polite">
         Loading...
       </h1>
     )
@@ -133,38 +133,38 @@ export default function Vans() {
 
   // if there is no error and the data is not loading, return the van data
   return (
-    <div className="p-8">
+    <div className="p-4 md:p-6">
       <h1 className="text-3xl font-bold">Explore our van options</h1>
 
-      <nav className="flex gap-4 items-center mt-4">
+      <nav className="mt-4 flex items-center gap-4">
         <Link
           to={genNewSearchParamString('type', 'simple')}
           className={`${
             typeFilter === 'simple'
-              ? 'shadow-md bg-[#E17654] text-white'
+              ? 'bg-[#E17654] text-white shadow-md'
               : 'bg-[#FFEAD0]'
           }  
-            py-2 px-4 rounded-md hover:bg-[#E17654] hover:text-white `}>
+            rounded-md px-4 py-2 hover:bg-[#E17654] hover:text-white `}>
           Simple
         </Link>
         <Link
           to={genNewSearchParamString('type', 'luxury')}
           className={`${
             typeFilter === 'luxury'
-              ? 'shadow-md bg-[#161616] text-white'
+              ? 'bg-[#161616] text-white shadow-md'
               : 'bg-[#FFEAD0]'
           }  
-            py-2 px-4 rounded-md hover:bg-[#161616] hover:text-white `}>
+            rounded-md px-4 py-2 hover:bg-[#161616] hover:text-white `}>
           Luxury
         </Link>
         <Link
           to={genNewSearchParamString('type', 'rugged')}
           className={`${
             typeFilter === 'rugged'
-              ? 'shadow-md bg-[#115E59] text-white'
+              ? 'bg-[#115E59] text-white shadow-md'
               : 'bg-[#FFEAD0]'
           }  
-            py-2 px-4 rounded-md hover:bg-[#115E59] hover:text-white `}>
+            rounded-md px-4 py-2 hover:bg-[#115E59] hover:text-white `}>
           Rugged
         </Link>
         {typeFilter ? (
@@ -176,7 +176,7 @@ export default function Vans() {
         ) : null}
       </nav>
 
-      <section className="grid grid-cols-custom1 gap-8 mt-8">
+      <section className="mt-4 grid grid-cols-custom1 gap-4 md:mt-6 md:gap-6">
         {getVansElements()}
       </section>
     </div>

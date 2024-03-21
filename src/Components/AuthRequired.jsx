@@ -15,7 +15,7 @@ export default function AuthRequired() {
     return (
       <Navigate
         // redirect the user to the sign in page
-        to="UserAccountSignIn"
+        to="SignIn"
         // pass a state object to the sign in page
         // this state object will be available in the location object
         // in the sign in page

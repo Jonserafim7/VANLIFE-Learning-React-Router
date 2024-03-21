@@ -3,7 +3,7 @@ import { AppContext } from '../Components/Layout'
 import { useLocation, useNavigate, Link } from 'react-router-dom'
 
 // The UserAccountSignIn component is used to sign in to the user's account
-export default function UserAccountSignIn() {
+export default function SignIn() {
   // destructure the setAuthenticated function from the context
   const { setAuthenticated, setError } = useContext(AppContext)
 
@@ -93,16 +93,16 @@ export default function UserAccountSignIn() {
 
   // The UserAccountSignIn component returns the sign in form
   return (
-    <div className="flex grow flex-col p-8 items-center">
+    <div className="mx-auto flex w-full max-w-xl grow flex-col items-center justify-center p-4">
       {/* If the location state object contains a message, display it */}
       {location.state?.message && (
-        <p className="text-red-500 p-8 font-bold text-lg">
+        <p className="p-8 text-lg font-bold text-red-500">
           {location.state.message}
         </p>
       )}
       <h1 className="text-3xl font-bold">Sign in to your account</h1>
       {/* The login form */}
-      <form className="flex flex-col w-full max-w-3xl" onSubmit={handleSubmit}>
+      <form className="flex w-full max-w-3xl flex-col" onSubmit={handleSubmit}>
         <input
           name="email"
           onChange={handleChange}
@@ -110,7 +110,7 @@ export default function UserAccountSignIn() {
           value={loginFormData.email}
           id="email"
           placeholder="Email address"
-          className="mt-8 border border-[#D1D5DB] p-2 rounded-t-md text-[#4D4D4D]"
+          className="mt-8 rounded-t-md border border-[#D1D5DB] p-2 text-[#4D4D4D]"
         />
         <input
           onChange={handleChange}
@@ -119,11 +119,11 @@ export default function UserAccountSignIn() {
           type="password"
           id="password"
           placeholder="Password"
-          className="border border-[#D1D5DB] p-2 rounded-b-md text-[#4D4D4D]"
+          className="rounded-b-md border border-[#D1D5DB] p-2 text-[#4D4D4D]"
         />
         <button
           type="submit"
-          className="bg-orange-500 text-white font-bold p-3 rounded-md mt-6">
+          className="mt-6 rounded-md bg-orange-500 p-3 font-bold text-white">
           {/* check the status of the form submission proccess to determine the text
           displayed on the button */}
           {status === 'loading' ? 'Loading...' : 'Sign in'}

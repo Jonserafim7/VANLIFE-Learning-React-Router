@@ -2,11 +2,12 @@ import * as React from 'react'
 import Button from '@mui/material/Button'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
+import MenuIcon from '@mui/icons-material/Menu'
 import { NavLink } from 'react-router-dom'
 
 // Dropdown menu component for the header
 // It gets rendered when the screen size is small (mobile)
-export default function BasicMenu({ authenticated }) {
+export default function BasicMenu({ authenticated, handleSignOut }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const handleClick = (event) => {
@@ -19,21 +20,12 @@ export default function BasicMenu({ authenticated }) {
   return (
     <div>
       <Button
-        sx={{
-          color: 'black',
-          fontWeight: 'bold',
-          fontFamily: 'Roboto',
-          fontSize: '1rem',
-          '&:hover': {
-            textDecoration: 'underline',
-          },
-        }}
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}>
-        Dashboard
+        <MenuIcon sx={{ color: 'black' }} />
       </Button>
       <Menu
         sx={{ '& .MuiList-root': { backgroundColor: '#FFF7ED' } }}
@@ -68,14 +60,14 @@ export default function BasicMenu({ authenticated }) {
         <MenuItem>
           {authenticated ? (
             <button
-              className="hover:text-orange-500 text-lg"
+              className="text-lg hover:text-orange-500"
               onClick={handleSignOut}>
               Sign Out
             </button>
           ) : (
             <NavLink
-              to={`${authenticated ? 'host' : 'UserAccountSignIn'}`}
-              className="hover:text-orange-500 text-lg">
+              to={`${authenticated ? 'host' : 'SignIn'}`}
+              className="text-lg hover:text-orange-500">
               {authenticated ? 'Sign Out' : 'Sign In'}
             </NavLink>
           )}

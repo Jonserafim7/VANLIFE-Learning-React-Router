@@ -7,7 +7,7 @@ import '/src/index.css'
 import Layout from './Components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
-import UserAccountSignIn from './pages/UserAccountSignIn'
+import SignIn from './pages/SignIn'
 import NotFound from './pages/NotFound'
 import AuthRequired from './Components/AuthRequired'
 
@@ -43,7 +43,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VansDetail />} />
-          <Route path="UserAccountSignIn" element={<UserAccountSignIn />} />
+          <Route path="SignIn" element={<SignIn />} />
 
           <Route element={<AuthRequired />}>
             <Route path="host" element={<HostLayout />}>

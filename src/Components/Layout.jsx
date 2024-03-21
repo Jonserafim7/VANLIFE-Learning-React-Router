@@ -41,9 +41,9 @@ export default function Layout() {
         authenticated,
         setAuthenticated,
       }}>
-      <div className="h-full flex flex-col relative">
+      <div className="relative flex h-full flex-col">
         <Header />
-        <main className="flex grow flex-col mt-[6.25rem] bg-[#FFF7ED] w-full">
+        <main className="mt-[4.75rem] flex w-full grow flex-col bg-[#FFF7ED] md:mt-[5.25rem]">
           <Outlet />
         </main>
         <Footer />
