@@ -7,7 +7,7 @@ export default function About() {
       <section className="flex flex-col">
         <img
           className="oject-cover w-full max-h-[450px]"
-          src="/src/Assets/Images/about-hero-img.png"
+          src="/Assets/about-hero-img.png"
         />
         <div className="p-8">
           <h1 className="text-[2rem]/[2.375rem] font-bold">

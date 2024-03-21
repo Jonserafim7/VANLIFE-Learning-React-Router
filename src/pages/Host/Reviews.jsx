@@ -31,7 +31,7 @@ export default function Reviews() {
   return (
     <div className="p-8 max-w-3xl mx-auto">
       <div className="flex items-center justify-center">
-        <img src="/src/Assets/Images/reviews-chart.png" className="p-6" />
+        <img src="/Assets/reviews-chart.png" className="p-6" />
       </div>
       <div className="flex flex-col gap-3">{hostReviewElements}</div>
     </div>

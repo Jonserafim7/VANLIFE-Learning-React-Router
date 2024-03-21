@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 // The Home component is used to render the home page of the application.
 export default function Home() {
   return (
-    <section className=" text-white bg-[url('/src/Assets/Images/home-bg.png')] bg-cover bg-center flex flex-col items-center grow justify-center">
+    <section className=" text-white bg-[url('/Assets/home-bg.png')] bg-cover bg-center flex flex-col items-center grow justify-center">
       <div className="flex flex-col p-8 max-w-4xl">
         <h1 className="text-4xl font-extrabold">
           You got the tranvel plans, we got the travel vans.

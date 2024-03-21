@@ -25,7 +25,7 @@ export default function Income() {
       <h1 className="text-3xl font-semibold">Income</h1>
       <div className="flex mx-auto">
         <img
-          src="/src/Assets/Images/income-chart.png"
+          src="/Assets/income-chart.png"
           alt="income chart"
           className="mt-6 object-cover "
         />
