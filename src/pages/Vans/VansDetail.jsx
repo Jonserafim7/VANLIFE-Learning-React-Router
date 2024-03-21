@@ -10,10 +10,10 @@ export default function VansDetail() {
 
   // get the location object from the router
   const location = useLocation()
+  console.log(location)
 
   // get the id from the URL
   const { id } = useParams()
-  console.log(useParams())
 
   // if there is an error, return the not found page
   if (error) {
