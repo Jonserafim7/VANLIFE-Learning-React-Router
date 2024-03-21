@@ -8,6 +8,9 @@ import {
 } from 'react-router-dom'
 import { AppContext } from '../../../Components/Layout'
 
+// Layout component used to share UI elements across the child components
+// The shared UI elements include a back button, the van card, and the navigation links
+// The Outlet component is used to render the child components of the HostVanLayout route
 export default function HostVanLayout() {
   // get the van data and the vansClasses function from the context
   const { vansClasses } = useContext(AppContext)

@@ -1,12 +1,16 @@
 import React, { useState, createContext } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import NotFound from '../pages/NotFound'
 import { Outlet } from 'react-router-dom'
 
 // create a context to store the state variables and share them with the child components
 export const AppContext = createContext()
 
+// The Layout component is used to wrap the entire application.
+// It provides the state variables and functions to the child components.
+// It is a context provider that provides the state variables and functions to the child components.
+// As a layout component, it contains the header, footer, and the main content of the application.
+// The main content is rendered using the Outlet component from the react-router-dom package.
 export default function Layout() {
   // state variable to store the van data fetched from the mock server
   const [vansData, setVansData] = useState([])

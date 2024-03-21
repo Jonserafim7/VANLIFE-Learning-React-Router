@@ -3,6 +3,7 @@ import { Link, useParams, useLocation } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
 import NotFound from '../NotFound'
 
+// Component to display the details of a van
 export default function VansDetail() {
   // get the van data and the vansClasses function from the context
   const { vansData, vansClasses, error } = useContext(AppContext)

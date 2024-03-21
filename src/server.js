@@ -1,3 +1,7 @@
+// This is the server file for the MirageJS server.
+// It's where you define your routes, models, and any other server-side logic.
+// It's also where you can seed your database with some initial data.
+
 import { createServer, Model, Response } from 'miragejs'
 
 createServer({

@@ -1,3 +1,4 @@
+// footer component shared by all pages
 export default function Footer() {
   return (
     <footer className="shadow-md">

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Outlet, Navigate, useLocation } from 'react-router-dom'
 import { AppContext } from './Layout'
 
+// component to protect routes that require authentication
 export default function AuthRequired() {
   // destructure the authenticated state from the context
   const { authenticated } = useContext(AppContext)

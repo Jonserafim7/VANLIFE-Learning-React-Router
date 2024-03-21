@@ -1,8 +1,11 @@
 import { useOutletContext } from 'react-router-dom'
 
+//Componment to display the details of a van in the host dashboard
 export default function HostVanDetails() {
+  //use the useOutletContext hook to get the van object from the context
   const { van } = useOutletContext()
 
+  //return the details of the van
   return (
     <div className="flex flex-col gap-3">
       <p>

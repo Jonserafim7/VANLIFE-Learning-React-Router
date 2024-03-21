@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { AppContext } from '../Components/Layout'
 import { useLocation, useNavigate, Link } from 'react-router-dom'
 
+// The UserAccountSignIn component is used to sign in to the user's account
 export default function UserAccountSignIn() {
   // destructure the setAuthenticated function from the context
   const { setAuthenticated, setError } = useContext(AppContext)

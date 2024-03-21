@@ -1,10 +1,14 @@
 import { useOutletContext } from 'react-router-dom'
 
+// Component to display the income of the user
 export default function Income() {
+  //use the useOutletContext hook to get the user data from the context
   const { userData } = useOutletContext()
 
+  //destructure the transactions from the user data
   const transactions = userData.userInfo.income.transactions
 
+  //map through the transactions and return a div for each transaction
   const transactionsElements = transactions.map((transaction) => {
     return (
       <div

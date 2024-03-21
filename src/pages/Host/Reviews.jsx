@@ -1,9 +1,12 @@
 import { useOutletContext } from 'react-router-dom'
 import Rating from '@mui/material/Rating'
 
+// Component to display the reviews of a host
 export default function Reviews() {
+  //use the useOutletContext hook to get the user data from the context
   const { userData } = useOutletContext()
 
+  //map through the vans of the user and return a div for each review
   const hostReviewElements = userData.vans.map((van) => {
     let vanreviews = []
     if (van.reviews) {
@@ -12,7 +15,6 @@ export default function Reviews() {
           <div
             key={review.id}
             className="flex flex-col gap-3 p-4 border-b  border-gray-300">
-            {/* <ReviewStar rating={review.rating} /> */}
             <Rating name="read-only" value={review.rating} readOnly />
             <div className="flex gap-2">
               <h2 className="font-bold">{review.reviewer}</h2>

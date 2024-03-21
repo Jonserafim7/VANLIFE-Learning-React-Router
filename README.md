@@ -17,6 +17,11 @@
 
 This project is part of the [Frontend Developer Career Path](https://scrimba.com/learn/frontend) on Scrimba. The main goal of this project is to learn the react router library to provide client side routing for our single page application. The project is a van hosting website where users can browse through the catalogue of listed vans and view the details of each listed van and also host their own vans through the host page.
 
+<img src="/src/Assets/Images/react-router-color.png" alt="React router logo" width="200"/> React router allows us to add client side routing to our single page application. It's the most popular routing library for React and it's used by many companies to create complex web applications. It's a powerful library that allows us to create nested routes, protected routes, and dynamic routes, and it also provides us with hooks to access the current URL and navigate between routes.
+
+<img src="/src/Assets/Images/scrimba.png" alt="scrimba logo" width="160"/>
+ is a learning platform that offers interactive coding screencasts. It's a great platform to learn web development because it allows us to code along with the instructor and pause the video to experiment with the code. It also has a great community discord server where we can ask questions and get help from other students and instructors.
+
 ### Main topics learned
 
 - **Routing basics:**

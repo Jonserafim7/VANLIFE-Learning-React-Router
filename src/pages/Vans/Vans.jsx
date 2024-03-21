@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { AppContext } from '../../Components/Layout'
 import NotFound from '../NotFound'
 
+// Component that displays all then vans listed on the site
 export default function Vans() {
   // destructure the context
   const {

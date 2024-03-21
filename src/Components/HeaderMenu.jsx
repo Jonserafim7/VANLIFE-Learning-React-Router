@@ -4,6 +4,8 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import { NavLink } from 'react-router-dom'
 
+// Dropdown menu component for the header
+// It gets rendered when the screen size is small (mobile)
 export default function BasicMenu({ authenticated }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)

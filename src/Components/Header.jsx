@@ -4,11 +4,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
 import HeaderMenu from './HeaderMenu'
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// Link is used to navigate between different pages in the application.
-// It does not reload the entire page when the link is clicked,
-// allowing for a faster navigation experience and maintaining the state of the application.
-
+// Header component shared by all pages
 export default function Header() {
   // destructuring the authenticated property from the useContext hook
   const { authenticated, setAuthenticated } = useContext(AppContext)
@@ -56,7 +52,6 @@ export default function Header() {
           <nav className="flex ml-auto gap-2 items-center">
             <NavLink
               to="host"
-              // className={({ isActive }) => activeStyle(isActive)}>
               className={({ isActive }) => activeStyle(isActive)}>
               Host
             </NavLink>

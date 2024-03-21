@@ -2,6 +2,9 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AppContext } from '../Components/Layout'
 
+// Component to display the not found page
+// This component gets rendered when a user tries to access a page that does not exist
+// If there is an error in the context, it will be displayed on the page
 export default function NotFound() {
   const { error } = useContext(AppContext)
 

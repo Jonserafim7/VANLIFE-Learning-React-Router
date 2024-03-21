@@ -1,6 +1,10 @@
 import { useOutletContext } from 'react-router'
 import Rating from '@mui/material/Rating'
 
+// Dashboard page for the host
+// It is the index page for the host layout
+// The index page is the default page that
+//gets rendered when the route is matched with the parent layout route
 export default function Dashboard() {
   // destructure the hostVans state variable from the context
   const { userData } = useOutletContext()
@@ -36,15 +40,22 @@ export default function Dashboard() {
 
   // function to get the average rating of the user's vans
   const getUserVansRatingsAverage = () => {
+    // check if the user has vans
     if (userData?.vans.length > 0) {
+      // map over the vans and return the reviews
       const ratingsArray = userData?.vans?.map((van) => {
+        // check if the van has reviews
+        // if not, return an empty array
         if (!van.reviews) return []
+        // if the van has reviews, map over the reviews and return the ratings
         else {
           return van.reviews.map((review) => {
             return review.rating
           })
         }
       })
+      // return the average of the ratings using the reduce array method
+      // flatten the ratingsArray using the flat array method
       return (
         ratingsArray.flat().reduce((acc, curr) => acc + curr, 0) /
         ratingsArray.flat().length

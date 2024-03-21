@@ -1,5 +1,6 @@
 import { Link, useOutletContext } from 'react-router-dom'
 
+// Component to display the host listed vans in the host dashboard
 export default function HostVans() {
   // get the hostVans state variable from the Outlet context
   const { userData } = useOutletContext()

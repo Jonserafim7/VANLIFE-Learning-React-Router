@@ -12,10 +12,15 @@ export default function HostLayout() {
 
   // async function to fetch the host vans data from the mock server
   const fetchUserData = async () => {
+    // set the loading state to true
     setLoading(true)
+    // try to fetch the host vans data
     try {
+      // fetch the host vans data
       const response1 = await fetch('/api/host/vans')
+      // parse the response body as JSON
       const data1 = await response1.json()
+      // if the response is not ok, throw an error
       if (!response1.ok) {
         throw {
           message: 'Failed to fetch host vans',
@@ -23,8 +28,11 @@ export default function HostLayout() {
           statusText: response1.statusText,
         }
       }
+      // fetch the user data
       const response2 = await fetch('/api/user')
+      // parse the response body as JSON
       const data2 = await response2.json()
+      // if the response is not ok, throw an error
       if (!response2.ok) {
         throw {
           message: 'Failed to fetch user data',
@@ -32,10 +40,13 @@ export default function HostLayout() {
           statusText: response2.statusText,
         }
       }
+      // if both requests are successful, update the state variables with the data
       setUserData({ vans: data1.vans, userInfo: data2.users[0] })
+      // if there is an error, catch it and update the error state variable
     } catch (error) {
       console.error('Error fetching host van data', error)
       setError(error)
+      // finally, set the loading state to false
     } finally {
       setLoading(false)
     }
@@ -56,6 +67,7 @@ export default function HostLayout() {
     return <NotFound />
   }
 
+  ;<nav></nav>
   // else, return the host layout page
   return (
     <>
