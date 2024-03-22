@@ -110,19 +110,31 @@ createServer({
         transactions: [
           {
             id: '1',
-            date: '13/01/2024',
+            date: {
+              day: 12,
+              month: 2,
+              year: 2023,
+            },
             amount: 720,
             description: 'Van rental',
           },
           {
             id: '2',
-            date: '14/05/2021',
+            date: {
+              day: 19,
+              month: 7,
+              year: 2023,
+            },
             amount: 560,
             description: 'Van rental',
           },
           {
             id: '3',
-            date: '27/02/2022',
+            date: {
+              day: 25,
+              month: 5,
+              year: 2023,
+            },
             amount: 980,
             description: 'Van rental',
           },

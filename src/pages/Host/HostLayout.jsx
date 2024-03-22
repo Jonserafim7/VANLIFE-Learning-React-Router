@@ -83,19 +83,19 @@ export default function HostLayout() {
           </NavLink>
 
           <NavLink
-            to="income"
-            className={({ isActive }) =>
-              isActive ? 'font-bold underline' : 'hover:text-orange-500'
-            }>
-            Income
-          </NavLink>
-
-          <NavLink
             to="vans"
             className={({ isActive }) =>
               isActive ? 'font-bold underline' : 'hover:text-orange-500'
             }>
             Vans
+          </NavLink>
+
+          <NavLink
+            to="income"
+            className={({ isActive }) =>
+              isActive ? 'font-bold underline' : 'hover:text-orange-500'
+            }>
+            Income
           </NavLink>
 
           <NavLink

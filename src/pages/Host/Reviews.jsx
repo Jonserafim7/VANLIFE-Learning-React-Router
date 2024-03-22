@@ -36,8 +36,10 @@ export default function Reviews() {
 
   return (
     <div className="maw-w-lg mx-auto max-w-lg p-4 md:p-6">
-      <h1 className="text-2xl font-semibold">Your Reviews</h1>
-      <ReviewsGraph />
+      <h1 className="text-3xl font-bold">Reviews</h1>
+      <div className="mt-4 h-1/3 md:mt-6">
+        <ReviewsGraph userData={userData} />
+      </div>
       <div className="flex flex-col">{hostReviewElements}</div>
     </div>
   )

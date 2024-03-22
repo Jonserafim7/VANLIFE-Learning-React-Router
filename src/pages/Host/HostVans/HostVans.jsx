@@ -34,8 +34,8 @@ export default function HostVans() {
 
   return (
     <div className="mx-auto flex w-full max-w-lg grow flex-col p-4 md:p-6">
-      <h1 className="text-3xl font-bold">Host listed vans</h1>
-      <div className="mt-4 flex flex-col gap-2">
+      <h1 className="text-3xl font-bold">Vans</h1>
+      <div className="mt-4 flex flex-col gap-4">
         {userData.vans.length > 0 ? hostVansElements : <h2>loading</h2>}
       </div>
     </div>

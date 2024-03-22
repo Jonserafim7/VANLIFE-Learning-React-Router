@@ -1,4 +1,5 @@
 import { useOutletContext } from 'react-router'
+import { Link } from 'react-router-dom'
 import Rating from '@mui/material/Rating'
 
 // Dashboard page for the host
@@ -30,7 +31,11 @@ export default function Dashboard() {
                 <span className="">/day</span>
               </p>
             </div>
-            <button className="ml-auto text-sm hover:underline">Edit</button>
+            <Link
+              to={`vans/${van.id}`}
+              className="ml-auto text-sm hover:underline">
+              Edit
+            </Link>
           </div>
         )
       })
@@ -75,9 +80,9 @@ export default function Dashboard() {
               <h2 className="mt-4 text-sm">
                 Income last <span className=" underline">30 days</span>
               </h2>
-              <button className="ml-auto text-sm hover:underline">
+              <Link to="income" className="ml-auto text-sm hover:underline">
                 Details
-              </button>
+              </Link>
             </div>
             <h3 className="text-3xl font-medium">
               ${userData?.userInfo?.income?.total}
@@ -109,7 +114,9 @@ export default function Dashboard() {
                 </h3>
               </div>
             </div>
-            <button className="ml-auto text-sm hover:underline">Details</button>
+            <Link to="reviews" className="ml-auto text-sm hover:underline">
+              Details
+            </Link>
           </div>
         </div>
       </section>
@@ -120,9 +127,9 @@ export default function Dashboard() {
           <div className="flex flex-col">
             <div className="flex">
               <h2 className="text-lg font-medium">Your listed vans</h2>
-              <button className="ml-auto text-sm hover:underline">
+              <Link to="vans" className="ml-auto text-sm hover:underline">
                 View all
-              </button>
+              </Link>
             </div>
             <div className="mt-4 flex flex-col gap-4">{getVansElements()}</div>
           </div>

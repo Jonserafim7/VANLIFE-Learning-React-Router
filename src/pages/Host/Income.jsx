@@ -1,4 +1,5 @@
 import { useOutletContext } from 'react-router-dom'
+import IncomeGraph from '../../Components/IncomeGraph'
 
 // Component to display the income of the user
 export default function Income() {
@@ -15,20 +16,25 @@ export default function Income() {
         key={transaction.id}
         className="flex items-center justify-between rounded-md bg-white p-2">
         <p className="text-xl font-semibold">${transaction.amount}</p>
-        <p className="text-sm">{transaction.date}</p>
+        <p className="text-sm">
+          {transaction.date.day}/{transaction.date.month}/
+          {transaction.date.year}
+        </p>
       </div>
     )
   })
 
   return (
     <div className="mx-auto flex max-w-lg flex-col p-4 md:p-6">
-      <h1 className="text-3xl font-semibold">Income</h1>
+      <h1 className="text-3xl font-bold">Income</h1>
 
-      <img
+      {/* <img
         src="/Assets/income-chart.png"
         alt="income chart"
         className="mx-auto mt-4  object-cover"
-      />
+      /> */}
+
+      <IncomeGraph transactions={transactions} />
 
       <div className="mt-4 flex flex-col gap-4">
         <h2>Your transactions ({transactions.length})</h2>
