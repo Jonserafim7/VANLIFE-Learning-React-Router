@@ -1,5 +1,6 @@
 import { useOutletContext } from 'react-router-dom'
 import Rating from '@mui/material/Rating'
+import ReviewsGraph from '../../Components/ReviewsGraph'
 
 // Component to display the reviews of a host
 export default function Reviews() {
@@ -35,7 +36,8 @@ export default function Reviews() {
 
   return (
     <div className="maw-w-lg mx-auto max-w-lg p-4 md:p-6">
-      <img src="/Assets/reviews-chart.png" className="object-cover" />
+      <h1 className="text-2xl font-semibold">Your Reviews</h1>
+      <ReviewsGraph />
       <div className="flex flex-col">{hostReviewElements}</div>
     </div>
   )

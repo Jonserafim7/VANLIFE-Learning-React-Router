@@ -25,7 +25,7 @@ createServer({
         {
           id: '1',
           vanId: '1',
-          rating: 5,
+          rating: 4,
           reviewer: 'Alice',
           content:
             'The beach bum is such as awesome van! Such as comfortable trip. We had it for 2 weeks and there was not a single issue. Super clean when we picked it up and the host is very comfortable and understanding. Highly recommend!!',
@@ -98,6 +98,7 @@ createServer({
         'https://assets.scrimba.com/advanced-react/react-router/green-wonder.png',
       type: 'rugged',
       hostId: '123',
+      reviews: [],
     })
     server.create('user', {
       id: '123',
