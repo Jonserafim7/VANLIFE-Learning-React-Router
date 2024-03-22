@@ -59,7 +59,7 @@ export default function HostLayout() {
 
   // if the data is loading, display a loading message
   if (loading) {
-    return <p className="p-8 font-bold text-2xl">Loading...</p>
+    return <p className="p-8 text-2xl font-bold">Loading...</p>
   }
 
   // if there is an error, return the not found page
@@ -71,12 +71,12 @@ export default function HostLayout() {
   // else, return the host layout page
   return (
     <>
-      <nav className="sticky top-24 z-[1] bg-inherit">
-        <div className=" border-b w-full p-4 flex gap-3">
+      <nav className="sticky top-[4.75rem] z-[1] bg-inherit">
+        <div className=" flex w-full gap-3 border-b p-4 md:p-6">
           <NavLink
             to="."
             className={({ isActive }) =>
-              isActive ? 'underline font-bold' : 'hover:text-orange-500'
+              isActive ? 'font-bold underline' : 'hover:text-orange-500'
             }
             end>
             Dashboard
@@ -85,7 +85,7 @@ export default function HostLayout() {
           <NavLink
             to="income"
             className={({ isActive }) =>
-              isActive ? 'underline font-bold' : 'hover:text-orange-500'
+              isActive ? 'font-bold underline' : 'hover:text-orange-500'
             }>
             Income
           </NavLink>
@@ -93,7 +93,7 @@ export default function HostLayout() {
           <NavLink
             to="vans"
             className={({ isActive }) =>
-              isActive ? 'underline font-bold' : 'hover:text-orange-500'
+              isActive ? 'font-bold underline' : 'hover:text-orange-500'
             }>
             Vans
           </NavLink>
@@ -101,7 +101,7 @@ export default function HostLayout() {
           <NavLink
             to="reviews"
             className={({ isActive }) =>
-              isActive ? 'underline font-bold' : 'hover:text-orange-500'
+              isActive ? 'font-bold underline' : 'hover:text-orange-500'
             }>
             Reviews
           </NavLink>

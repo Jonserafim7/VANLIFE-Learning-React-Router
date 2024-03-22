@@ -11,31 +11,31 @@ export default function HostVans() {
       <Link
         key={van.id}
         to={van.id}
-        className="hover:shadow-md hover:scale-[102%] transition ease-in-out flex items-center rounded-md gap-4 p-3 bg-white mx-auto w-full">
+        className="flex items-center rounded-md bg-white p-3 transition ease-in-out hover:scale-[102%] hover:shadow-md">
         <img
-          className="min-w-24 min-h-24 max-w-36 max-h-36 rounded-md object-cover"
+          className="max-h-36 min-h-24 min-w-24 max-w-36 rounded-md object-cover"
           src={van.imageUrl}
           alt={`${van.name} + image`}
         />
 
         <div className="flex w-full">
-          <div className="flex flex-col">
-            <h2 className="text-lg font-bold">{van.name}</h2>
+          <div className="ml-2 flex flex-col">
+            <h2 className="text-lg font-medium">{van.name}</h2>
             <p className="">
               ${van.price}
               <span className="">/day</span>
             </p>
           </div>
-          <button className="ml-auto hover:underline">Edit</button>
+          <button className="ml-auto text-sm hover:underline">Edit</button>
         </div>
       </Link>
     )
   })
 
   return (
-    <div className="flex flex-col p-8 container mx-auto max-w-3xl">
+    <div className="mx-auto flex w-full max-w-lg grow flex-col p-4 md:p-6">
       <h1 className="text-3xl font-bold">Host listed vans</h1>
-      <div className="flex flex-col gap-6 mt-8">
+      <div className="mt-4 flex flex-col gap-2">
         {userData.vans.length > 0 ? hostVansElements : <h2>loading</h2>}
       </div>
     </div>

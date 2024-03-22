@@ -14,11 +14,16 @@ export default function Reviews() {
         return (
           <div
             key={review.id}
-            className="flex flex-col gap-3 p-4 border-b  border-gray-300">
-            <Rating name="read-only" value={review.rating} readOnly />
-            <div className="flex gap-2">
-              <h2 className="font-bold">{review.reviewer}</h2>
-              <p className="text-gray-400 font-semibold">{review.date}</p>
+            className="flex flex-col gap-2 border-b border-gray-300 py-4">
+            <Rating
+              name="read-only"
+              value={review.rating}
+              size="small"
+              readOnly
+            />
+            <div className="flex items-center">
+              <p className="text-lg font-medium">{review.reviewer}</p>
+              <p className="ml-auto text-sm text-gray-400">{review.date}</p>
             </div>
             <p>{review.content}</p>
           </div>
@@ -29,11 +34,9 @@ export default function Reviews() {
   })
 
   return (
-    <div className="p-8 max-w-3xl mx-auto">
-      <div className="flex items-center justify-center">
-        <img src="/Assets/reviews-chart.png" className="p-6" />
-      </div>
-      <div className="flex flex-col gap-3">{hostReviewElements}</div>
+    <div className="maw-w-lg mx-auto max-w-lg p-4 md:p-6">
+      <img src="/Assets/reviews-chart.png" className="object-cover" />
+      <div className="flex flex-col">{hostReviewElements}</div>
     </div>
   )
 }

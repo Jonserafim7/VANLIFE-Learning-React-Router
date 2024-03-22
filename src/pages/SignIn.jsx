@@ -93,7 +93,7 @@ export default function SignIn() {
 
   // The UserAccountSignIn component returns the sign in form
   return (
-    <div className="mx-auto flex w-full max-w-xl grow flex-col items-center justify-center p-4">
+    <div className="mx-auto flex w-full max-w-xl grow flex-col items-center p-4">
       {/* If the location state object contains a message, display it */}
       {location.state?.message && (
         <p className="p-8 text-lg font-bold text-red-500">

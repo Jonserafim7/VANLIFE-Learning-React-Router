@@ -13,24 +13,24 @@ export default function Income() {
     return (
       <div
         key={transaction.id}
-        className="flex justify-between bg-white p-4 items-center rounded-md">
-        <p className="font-semibold text-2xl">${transaction.amount}</p>
-        <p>{transaction.date}</p>
+        className="flex items-center justify-between rounded-md bg-white p-2">
+        <p className="text-xl font-semibold">${transaction.amount}</p>
+        <p className="text-sm">{transaction.date}</p>
       </div>
     )
   })
 
   return (
-    <div className="p-8 flex flex-col container max-w-3xl mx-auto">
+    <div className="mx-auto flex max-w-lg flex-col p-4 md:p-6">
       <h1 className="text-3xl font-semibold">Income</h1>
-      <div className="flex mx-auto">
-        <img
-          src="/Assets/income-chart.png"
-          alt="income chart"
-          className="mt-6 object-cover "
-        />
-      </div>
-      <div className="flex flex-col gap-5 mt-5 w-full ">
+
+      <img
+        src="/Assets/income-chart.png"
+        alt="income chart"
+        className="mx-auto mt-4  object-cover"
+      />
+
+      <div className="mt-4 flex flex-col gap-4">
         <h2>Your transactions ({transactions.length})</h2>
         <div className="flex flex-col gap-4">{transactionsElements}</div>
       </div>

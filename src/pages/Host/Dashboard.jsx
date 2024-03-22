@@ -17,20 +17,20 @@ export default function Dashboard() {
         return (
           <div
             key={van.id}
-            className="flex items-center bg-white py-4 px-5 rounded-md">
+            className="flex items-center rounded-md bg-white p-3">
             <img
-              className="w-24 h-24 rounded-md object-cover"
+              className="h-24 w-24 rounded-md object-cover"
               src={van.imageUrl}
               alt={`${van.name} + image`}
             />
-            <div className="flex flex-col ml-5">
-              <h3 className="text-lg font-bold">{van.name}</h3>
-              <p className="">
+            <div className="ml-3 flex flex-col">
+              <h3 className="text-base font-medium">{van.name}</h3>
+              <p className="text-sm">
                 ${van.price}
                 <span className="">/day</span>
               </p>
             </div>
-            <button className="ml-auto hover:underline">Edit</button>
+            <button className="ml-auto text-sm hover:underline">Edit</button>
           </div>
         )
       })
@@ -65,19 +65,21 @@ export default function Dashboard() {
 
   // return the dashboard page
   return (
-    <div className="pb-14 flex flex-col">
+    <div className="flex flex-col pb-14">
       {/* income section */}
-      <section className="py-5 px-8 bg-[#FFEAD0] ">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex flex-col gap-3">
-            <h1 className="text-3xl font-bold">Welcome!</h1>
+      <section className="bg-[#FFEAD0] p-4 md:p-6">
+        <div className="mx-auto max-w-3xl">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-3xl font-medium">Welcome!</h1>
             <div className="flex">
-              <h2>
-                Income last <span className="underline">30 days</span>
+              <h2 className="mt-4 text-sm">
+                Income last <span className=" underline">30 days</span>
               </h2>
-              <button className="ml-auto hover:underline">Details</button>
+              <button className="ml-auto text-sm hover:underline">
+                Details
+              </button>
             </div>
-            <h3 className="text-4xl font-black">
+            <h3 className="text-3xl font-medium">
               ${userData?.userInfo?.income?.total}
             </h3>
           </div>
@@ -85,36 +87,44 @@ export default function Dashboard() {
       </section>
 
       {/* reviews section */}
-      <section className="py-5 px-8 bg-[#FFDDB2] ">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex gap-3">
-            <h2 className="text-lg font-bold">Review score</h2>
-            <Rating
-              name="read-only"
-              precision={0.5}
-              value={getUserVansRatingsAverage()}
-              readOnly
-            />
-            <h3 className=" ml-1">
-              <span className="font-bold">
-                {userData?.vans.length > 0 ? getUserVansRatingsAverage() : ''}
-              </span>
-              /5
-            </h3>
-            <button className="ml-auto hover:underline">Details</button>
+      <section className="bg-[#FFDDB2] p-4 md:p-6">
+        <div className="mx-auto max-w-3xl">
+          <div className="flex items-center">
+            <div className="flex flex-col">
+              <h2 className="text-lg font-medium">Review score</h2>
+              <div className="flex gap-2">
+                <Rating
+                  name="read-only"
+                  precision={0.5}
+                  value={getUserVansRatingsAverage()}
+                  readOnly
+                />
+                <h3 className=" ml-1">
+                  <span className="font-medium">
+                    {userData?.vans.length > 0
+                      ? getUserVansRatingsAverage()
+                      : ''}
+                  </span>
+                  /5
+                </h3>
+              </div>
+            </div>
+            <button className="ml-auto text-sm hover:underline">Details</button>
           </div>
         </div>
       </section>
 
       {/* vans section */}
-      <section className="py-5 px-8 ">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex flex-col gap-5">
+      <section className="p-4 md:p-6">
+        <div className="mx-auto max-w-3xl">
+          <div className="flex flex-col">
             <div className="flex">
-              <h2 className="text-lg font-bold">Your listed vans</h2>
-              <button className="ml-auto hover:underline">View all</button>
+              <h2 className="text-lg font-medium">Your listed vans</h2>
+              <button className="ml-auto text-sm hover:underline">
+                View all
+              </button>
             </div>
-            <div className="flex flex-col gap-4">{getVansElements()}</div>
+            <div className="mt-4 flex flex-col gap-4">{getVansElements()}</div>
           </div>
         </div>
       </section>

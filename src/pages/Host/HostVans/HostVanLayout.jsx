@@ -24,23 +24,22 @@ export default function HostVanLayout() {
 
   // display the van data if it exists, otherwise display a message
   const vanElement = van ? (
-    <section className=" bg-white flex flex-col p-5">
-      <div className="flex gap-4">
-        <img src={`${van.imageUrl}`} className="w-36 rounded-md object-cover" />
-        <div className="flex flex-col justify-center gap-1">
-          <p
-            className={`py-1 px-5 rounded-md w-max 
+    <div className="flex gap-2 rounded-md md:gap-4">
+      <img src={`${van.imageUrl}`} className="w-40  rounded-md md:w-60" />
+      <div className="flex flex-col justify-center">
+        <p
+          className={`w-max rounded-md px-5 py-1 
                       ${vansClasses(van)} text-white`}>
-            {van.type}
-          </p>
-          <h1 className="text-3xl font-bold">{van.name}</h1>
-          <h2>
-            ${van.price}
-            /day
-          </h2>
-        </div>
+          {van.type}
+        </p>
+        <h1 className="mt-4 text-2xl/none font-semibold">{van.name}</h1>
+
+        <h2 className="mt-1">
+          <span className="text-lg font-medium">${van.price}</span>
+          /day
+        </h2>
       </div>
-    </section>
+    </div>
   ) : (
     <div>
       <h1>Van not found</h1>
@@ -48,46 +47,47 @@ export default function HostVanLayout() {
   )
 
   return (
-    <div className="p-8">
-      <Link to=".." relative="path" className="hover:underline hover:font-bold">
+    <div className="mx-auto max-w-lg p-4 md:p-6">
+      <Link to=".." relative="path" className="hover:font-bold hover:underline">
         Back to all vans
       </Link>
+      <div className="mt-4  rounded-md bg-white p-4">
+        {vanElement}
 
-      <div className="mt-5">{vanElement}</div>
-
-      <nav className="flex gap-5 py-5">
-        <NavLink
-          to={`.`}
-          className={({ isActive }) =>
-            isActive
-              ? 'underline font-semibold text-base hover:text-orange-500'
-              : 'font-medium text-base hover:text-orange-500'
-          }
-          end>
-          Details
-        </NavLink>
-        <NavLink
-          to={`pricing`}
-          className={({ isActive }) =>
-            isActive
-              ? 'underline font-semibold text-base hover:text-orange-500'
-              : 'font-medium text-base hover:text-orange-500'
-          }>
-          Pricing
-        </NavLink>
-        <NavLink
-          to={`photos`}
-          className={({ isActive }) =>
-            isActive
-              ? 'underline font-semibold text-base hover:text-orange-500'
-              : 'font-medium text-base hover:text-orange-500'
-          }>
-          Photos
-        </NavLink>
-      </nav>
-      <hr />
-      <div className="flex flex-col mt-5">
-        <Outlet context={{ van }} />
+        <nav className="flex gap-4 py-4">
+          <NavLink
+            to={`.`}
+            className={({ isActive }) =>
+              isActive
+                ? 'font-semibold underline'
+                : 'font-medium text-[#4D4D4D]'
+            }
+            end>
+            Details
+          </NavLink>
+          <NavLink
+            to={`pricing`}
+            className={({ isActive }) =>
+              isActive
+                ? 'font-semibold underline'
+                : 'font-medium text-[#4D4D4D]'
+            }>
+            Pricing
+          </NavLink>
+          <NavLink
+            to={`photos`}
+            className={({ isActive }) =>
+              isActive
+                ? 'font-semibold underline'
+                : 'font-medium text-[#4D4D4D]'
+            }>
+            Photos
+          </NavLink>
+        </nav>
+        <hr />
+        <div className="mt-4 flex flex-col">
+          <Outlet context={{ van }} />
+        </div>
       </div>
     </div>
   )
