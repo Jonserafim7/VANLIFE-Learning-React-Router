@@ -30,15 +30,13 @@ export default function Layout() {
 
   // useLocation hook to get the current location
   const currentPath = useLocation().pathname
-  console.log(currentPath)
+  // console.log(currentPath)
 
   const determineMainBg = () => {
     return currentPath === '/'
       ? `bg-[url('/Assets/home-bg.png')] bg-cover`
       : 'bg-[#FFF7ED]'
   }
-
-  console.log(determineMainBg())
 
   return (
     <AppContext.Provider
@@ -61,7 +59,7 @@ export default function Layout() {
         </header>
         <main
           className={`flex grow flex-col ${determineMainBg()} mt-[68px] md:mt-[84px] lg:mt-[100px]`}>
-          <div className="relative mx-auto flex w-full max-w-4xl grow border border-red-600 p-4 md:p-6 lg:p-8">
+          <div className="relative mx-auto flex w-full max-w-4xl grow p-4 md:p-6 lg:p-8">
             <Outlet />
           </div>
         </main>

@@ -36,7 +36,7 @@ export default function ReviewsGraph({ userData }) {
     <BarChart
       sx={{ '& .MuiBarElement-root': { border: '2px solid red' } }}
       dataset={ratingsDataSet}
-      xAxis={[{ tickMinStep: 1 }]}
+      xAxis={[{ tickMinStep: 1, label: 'Number of reviews', dataKey: 'count' }]}
       yAxis={[
         {
           scaleType: 'band',
@@ -49,9 +49,9 @@ export default function ReviewsGraph({ userData }) {
       layout="horizontal"
       margin={{
         left: 40,
-        right: 5,
+        right: 40,
         top: 0,
-        bottom: 25,
+        bottom: 45,
       }}
     />
   )

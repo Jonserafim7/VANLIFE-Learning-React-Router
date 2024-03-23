@@ -33,7 +33,7 @@ export default function Income() {
         alt="income chart"
         className="mx-auto mt-4  object-cover"
       /> */}
-      <div className="flex w-full">
+      <div className="flex h-80 w-full">
         <IncomeGraph transactions={transactions} />
       </div>
 

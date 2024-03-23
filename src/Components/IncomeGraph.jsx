@@ -36,7 +36,7 @@ export default function IncomeGraph({ transactions }) {
       dataset={mydataset}
       xAxis={[{ scaleType: 'band', dataKey: 'month', label: 'Month' }]}
       series={[{ dataKey: 'amount', color: '#E17654' }]}
-      margin={{ top: 20, right: 0, bottom: 50, left: 50 }}
+      margin={{ top: 20, right: 20, bottom: 50, left: 50 }}
       {...chartSetting}
     />
   )
