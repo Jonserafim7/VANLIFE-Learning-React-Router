@@ -70,68 +70,71 @@ export default function Dashboard() {
 
   // return the dashboard page
   return (
-    <div className="flex flex-col pb-14">
+    <div className="flex flex-col">
       {/* income section */}
-      <section className="bg-[#FFEAD0] p-4 md:p-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex flex-col gap-1">
-            <h1 className="text-3xl font-medium">Welcome!</h1>
-            <div className="flex">
-              <h2 className="mt-4 text-sm">
-                Income last <span className=" underline">30 days</span>
-              </h2>
-              <Link to="income" className="ml-auto text-sm hover:underline">
+      <div>
+        <section className=" absolute left-0 top-[56px] w-full bg-[#FFEAD0] p-4">
+          <div className="mx-auto max-w-3xl">
+            <div className="flex flex-col gap-1">
+              <h1 className="text-3xl font-medium">Welcome!</h1>
+              <div className="flex">
+                <h2 className="mt-4 text-sm">
+                  Income last <span className=" underline">30 days</span>
+                </h2>
+                <Link to="income" className="ml-auto text-sm hover:underline">
+                  Details
+                </Link>
+              </div>
+              <h3 className="text-3xl font-medium">
+                ${userData?.userInfo?.income?.total}
+              </h3>
+            </div>
+          </div>
+        </section>
+
+        {/* reviews section */}
+        <section className=" absolute left-0 top-[204px] w-full bg-[#FFDDB2] p-4">
+          <div className="mx-auto max-w-3xl">
+            <div className="flex items-center">
+              <div className="flex flex-col">
+                <h2 className="text-lg font-medium">Review score</h2>
+                <div className="flex gap-2">
+                  <Rating
+                    name="read-only"
+                    precision={0.5}
+                    value={getUserVansRatingsAverage()}
+                    readOnly
+                  />
+                  <h3 className=" ml-1">
+                    <span className="font-medium">
+                      {userData?.vans.length > 0
+                        ? getUserVansRatingsAverage()
+                        : ''}
+                    </span>
+                    /5
+                  </h3>
+                </div>
+              </div>
+              <Link to="reviews" className="ml-auto text-sm hover:underline">
                 Details
               </Link>
             </div>
-            <h3 className="text-3xl font-medium">
-              ${userData?.userInfo?.income?.total}
-            </h3>
           </div>
-        </div>
-      </section>
-
-      {/* reviews section */}
-      <section className="bg-[#FFDDB2] p-4 md:p-6">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex items-center">
-            <div className="flex flex-col">
-              <h2 className="text-lg font-medium">Review score</h2>
-              <div className="flex gap-2">
-                <Rating
-                  name="read-only"
-                  precision={0.5}
-                  value={getUserVansRatingsAverage()}
-                  readOnly
-                />
-                <h3 className=" ml-1">
-                  <span className="font-medium">
-                    {userData?.vans.length > 0
-                      ? getUserVansRatingsAverage()
-                      : ''}
-                  </span>
-                  /5
-                </h3>
-              </div>
-            </div>
-            <Link to="reviews" className="ml-auto text-sm hover:underline">
-              Details
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* vans section */}
-      <section className="p-4 md:p-6">
+      <section className="mt-[232px]">
         <div className="mx-auto max-w-3xl">
-          <div className="flex flex-col">
-            <div className="flex">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center">
               <h2 className="text-lg font-medium">Your listed vans</h2>
               <Link to="vans" className="ml-auto text-sm hover:underline">
                 View all
               </Link>
             </div>
-            <div className="mt-4 flex flex-col gap-4">{getVansElements()}</div>
+            <div className="flex flex-col gap-4">{getVansElements()}</div>
+            <div className="flex flex-col gap-4">{getVansElements()}</div>
           </div>
         </div>
       </section>

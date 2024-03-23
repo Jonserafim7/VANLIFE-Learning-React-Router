@@ -28,7 +28,7 @@ export default function Header() {
 
   // The Header component returns the header of the application.
   return (
-    <header className="fixed top-0 flex w-full items-center justify-between bg-[#ffefdc] px-4 py-5 shadow-md md:p-6">
+    <div className="flex items-center justify-between">
       {/* Site logo */}
       <Link to="/" className="text-3xl font-bold">
         #VANLIFE
@@ -68,6 +68,6 @@ export default function Header() {
           </NavLink>
         )}
       </nav>
-    </header>
+    </div>
   )
 }

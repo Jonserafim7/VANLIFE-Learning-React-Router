@@ -93,16 +93,16 @@ export default function SignIn() {
 
   // The UserAccountSignIn component returns the sign in form
   return (
-    <div className="mx-auto flex w-full max-w-xl grow flex-col items-center p-4">
+    <div className="mx-auto mt-20 flex w-full max-w-md flex-col items-center gap-4">
       {/* If the location state object contains a message, display it */}
       {location.state?.message && (
-        <p className="p-8 text-lg font-bold text-red-500">
+        <p className="absolute top-10 text-lg font-bold text-red-500">
           {location.state.message}
         </p>
       )}
       <h1 className="text-3xl font-bold">Sign in to your account</h1>
       {/* The login form */}
-      <form className="flex w-full max-w-3xl flex-col" onSubmit={handleSubmit}>
+      <form className="flex w-full flex-col" onSubmit={handleSubmit}>
         <input
           name="email"
           onChange={handleChange}
@@ -110,7 +110,7 @@ export default function SignIn() {
           value={loginFormData.email}
           id="email"
           placeholder="Email address"
-          className="mt-8 rounded-t-md border border-[#D1D5DB] p-2 text-[#4D4D4D]"
+          className="rounded-t-md border border-[#D1D5DB] p-2 text-[#4D4D4D]"
         />
         <input
           onChange={handleChange}
@@ -123,13 +123,13 @@ export default function SignIn() {
         />
         <button
           type="submit"
-          className="mt-6 rounded-md bg-orange-500 p-3 font-bold text-white">
+          className="mt-4 rounded-md bg-orange-500 p-3 font-bold text-white">
           {/* check the status of the form submission proccess to determine the text
           displayed on the button */}
           {status === 'loading' ? 'Loading...' : 'Sign in'}
         </button>
       </form>
-      <p className="mt-8 font-bold">
+      <p className="font-medium">
         Don't have an account?{' '}
         <Link className="text-orange-500">Create one now</Link>
       </p>

@@ -25,7 +25,7 @@ export default function Income() {
   })
 
   return (
-    <div className="mx-auto flex max-w-lg flex-col p-4 md:p-6">
+    <div className="mx-auto flex max-w-lg flex-col">
       <h1 className="text-3xl font-bold">Income</h1>
 
       {/* <img
@@ -33,8 +33,9 @@ export default function Income() {
         alt="income chart"
         className="mx-auto mt-4  object-cover"
       /> */}
-
-      <IncomeGraph transactions={transactions} />
+      <div className="flex w-full">
+        <IncomeGraph transactions={transactions} />
+      </div>
 
       <div className="mt-4 flex flex-col gap-4">
         <h2>Your transactions ({transactions.length})</h2>

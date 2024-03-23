@@ -8,30 +8,19 @@ const chartSetting = {
       label: 'amount ($)',
     },
   ],
-  width: 500,
-  height: 300,
+  // width: 300,
+  // height: 300,
   sx: {
     [`.${axisClasses.left} .${axisClasses.label}`]: {
       transform: 'translate(-10px, 0)',
     },
+    // width: 100, // width of the chart
+    // height: 100, // height of the chart
   },
 }
 
 export default function IncomeGraph({ transactions }) {
-  const months = [
-    'Jan',
-    'Fev',
-    'Mar',
-    'Apr',
-    'May',
-    'June',
-    'July',
-    'Aug',
-    'Sept',
-    'Oct',
-    'Nov',
-    'Dec',
-  ]
+  const months = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
 
   const mydataset = months.map((month, index) => {
     const transaction = transactions.find(
@@ -45,8 +34,9 @@ export default function IncomeGraph({ transactions }) {
   return (
     <BarChart
       dataset={mydataset}
-      xAxis={[{ scaleType: 'band', dataKey: 'month' }]}
+      xAxis={[{ scaleType: 'band', dataKey: 'month', label: 'Month' }]}
       series={[{ dataKey: 'amount', color: '#E17654' }]}
+      margin={{ top: 20, right: 0, bottom: 50, left: 50 }}
       {...chartSetting}
     />
   )

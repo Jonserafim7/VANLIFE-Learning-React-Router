@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 // The About component is used to render the about page of the application.
 export default function About() {
   return (
-    <div className="flex grow flex-col py-4 md:py-8">
+    <div className="flex grow flex-col gap-4">
       <img
-        className="h-[200px] w-full object-cover md:h-[300px] lg:h-[400px]"
+        className="absolute left-0 top-4 h-[200px] w-full object-cover md:h-[300px]"
         src="/Assets/about-hero-img.png"
       />
-      <section className="flex flex-col p-4 md:p-6">
+      <section className="mt-[220px] flex flex-col md:mt-[320px]">
         <h1 className="text-3xl/none font-bold">
           Don’t squeeze in a sedan when you could relax in a van.
         </h1>
@@ -23,15 +23,15 @@ export default function About() {
         </p>
       </section>
 
-      <section className="flex grow items-center px-4 md:px-6">
-        <div className="flex flex-col rounded-lg bg-[#FFCC8D] p-4 md:w-full">
-          <h2 className="text-2xl/tight font-bold">
+      <section className="flex items-center">
+        <div className="flex flex-col rounded-lg bg-[#FFCC8D] p-4">
+          <h2 className="text-2xl/tight font-medium">
             Your destination is waiting.
           </h2>
           <h2 className="text-2xl/tight font-bold">Your van is ready.</h2>
           <Link
             to="/vans"
-            className="mt-3 w-max rounded-md bg-black px-6 py-3 text-center font-semibold text-white md:mt-5 md:w-full">
+            className="mt-3 w-max rounded-md bg-black px-6 py-3 text-center font-medium text-white md:mt-5">
             Explore our vans
           </Link>
         </div>

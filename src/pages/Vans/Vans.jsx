@@ -133,7 +133,7 @@ export default function Vans() {
 
   // if there is no error and the data is not loading, return the van data
   return (
-    <div className="p-4 md:p-6">
+    <div>
       <h1 className="text-3xl font-bold">Explore our van options</h1>
 
       <nav className="mt-4 flex items-center gap-4">

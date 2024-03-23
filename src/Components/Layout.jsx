@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 // create a context to store the state variables and share them with the child components
 export const AppContext = createContext()
@@ -28,6 +28,18 @@ export default function Layout() {
     if (van.type === 'rugged') return 'bg-[#115E59]'
   }
 
+  // useLocation hook to get the current location
+  const currentPath = useLocation().pathname
+  console.log(currentPath)
+
+  const determineMainBg = () => {
+    return currentPath === '/'
+      ? `bg-[url('/Assets/home-bg.png')] bg-cover`
+      : 'bg-[#FFF7ED]'
+  }
+
+  console.log(determineMainBg())
+
   return (
     <AppContext.Provider
       value={{
@@ -41,12 +53,23 @@ export default function Layout() {
         authenticated,
         setAuthenticated,
       }}>
-      <div className="relative flex h-full flex-col">
-        <Header />
-        <main className="mt-[4.75rem] flex w-full grow flex-col bg-[#FFF7ED] md:mt-[5.25rem]">
-          <Outlet />
+      <div className="relative flex h-full w-full flex-col">
+        <header className="fixed top-0 z-10 w-full bg-[#FFF7ED]">
+          <div className="mx-auto max-w-4xl p-4 md:p-6 lg:p-8">
+            <Header />
+          </div>
+        </header>
+        <main
+          className={`flex grow flex-col ${determineMainBg()} mt-[68px] md:mt-[84px] lg:mt-[100px]`}>
+          <div className="relative mx-auto flex w-full max-w-4xl grow border border-red-600 p-4 md:p-6 lg:p-8">
+            <Outlet />
+          </div>
         </main>
-        <Footer />
+        <footer className="bg-[#252525]">
+          <div className="mx-auto max-w-4xl p-4">
+            <Footer />
+          </div>
+        </footer>
       </div>
     </AppContext.Provider>
   )

@@ -67,12 +67,11 @@ export default function HostLayout() {
     return <NotFound />
   }
 
-  ;<nav></nav>
   // else, return the host layout page
   return (
-    <>
-      <nav className="sticky top-[4.75rem] z-[1] bg-inherit">
-        <div className=" flex w-full gap-3 border-b p-4 md:p-6">
+    <div className="flex w-full flex-col">
+      <nav className="fixed left-0 right-0 top-[68px] z-10 mx-auto w-full max-w-4xl border border-black bg-[#fff7ed] p-4 md:top-[84px] lg:top-[99px]">
+        <div className=" flex w-full gap-3">
           <NavLink
             to="."
             className={({ isActive }) =>
@@ -108,7 +107,9 @@ export default function HostLayout() {
         </div>
       </nav>
 
-      <Outlet context={{ userData }} />
-    </>
+      <div className="z-0 mt-[56px]">
+        <Outlet context={{ userData }} />
+      </div>
+    </div>
   )
 }
