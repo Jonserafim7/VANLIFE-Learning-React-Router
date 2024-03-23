@@ -134,7 +134,6 @@ export default function Dashboard() {
               </Link>
             </div>
             <div className="flex flex-col gap-4">{getVansElements()}</div>
-            <div className="flex flex-col gap-4">{getVansElements()}</div>
           </div>
         </div>
       </section>
