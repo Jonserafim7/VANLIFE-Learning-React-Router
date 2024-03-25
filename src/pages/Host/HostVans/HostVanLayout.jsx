@@ -47,11 +47,11 @@ export default function HostVanLayout() {
   )
 
   return (
-    <div className="mx-auto max-w-lg p-4 md:p-6">
+    <div className="flex">
       <Link to=".." relative="path" className="hover:font-bold hover:underline">
         Back to all vans
       </Link>
-      <div className="mt-4  rounded-md bg-white p-4">
+      <div className="mx-auto  mt-4 max-w-lg rounded-md bg-white p-4">
         {vanElement}
 
         <nav className="flex gap-4 py-4">

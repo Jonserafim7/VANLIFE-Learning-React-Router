@@ -70,7 +70,7 @@ export default function HostLayout() {
   // else, return the host layout page
   return (
     <div className="flex w-full flex-col">
-      <nav className="fixed left-0 right-0 top-[68px] z-10 mx-auto w-full max-w-4xl bg-[#fff7ed] p-4 md:top-[84px] lg:top-[99px]">
+      <nav className="fixed left-0 right-0 top-[68px] z-10 mx-auto w-full max-w-4xl bg-[#fff7ed] p-4 md:top-[84px] md:px-6 lg:top-[99px] lg:px-8">
         <div className=" flex w-full gap-3">
           <NavLink
             to="."
